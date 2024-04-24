@@ -4,13 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class Cord : MonoBehaviour
 {
-    [SerializeField] private List<HingeJoint> _jointPositions;
-
+    private List<HingeJoint> _jointPositions;
     private LineRenderer _lineRenderer;
     private int _countPoint;
 
     public void Initialized()
     {
+        _jointPositions = new List<HingeJoint>();
         NewCord();
     }
 
@@ -22,7 +22,6 @@ public class Cord : MonoBehaviour
     private void NewCord()
     {
         _lineRenderer = GetComponent<LineRenderer>();
-        if (_jointPositions == null) return;
 
         HingeJoint[] joints = GetComponentsInChildren<HingeJoint>();
         foreach (HingeJoint joint in joints)
@@ -30,8 +29,10 @@ public class Cord : MonoBehaviour
             _jointPositions.Add(joint);
         }
 
+        if (_jointPositions == null) return;
         _countPoint = _jointPositions.Count;
         _lineRenderer.positionCount = _countPoint;
+
     }
     
     public void CreateCord(List<HingeJoint> joints, float width, Material material, Gradient color)
@@ -48,16 +49,25 @@ public class Cord : MonoBehaviour
 
     public void Cut(HingeJoint joint)
     {
-        CreateNewCord(joint);
+        if (_jointPositions == null) return;
+        int index = _jointPositions.IndexOf(joint);
+        int count = _jointPositions.Count - index;
+        CreateNewCord(joint, index);
+        _jointPositions.RemoveRange(index, count);
+        _countPoint = _jointPositions.Count;
     }
 
-    private void CreateNewCord(HingeJoint joint)
+    public void Clear()
     {
-        int index = _jointPositions.IndexOf(joint);
-        _countPoint = _lineRenderer.positionCount = index;
-        
+        _countPoint = _lineRenderer.positionCount = 0;
+        _jointPositions.Clear();
+    }
+
+    private void CreateNewCord(HingeJoint joint, int index)
+    {
         Cord cord = joint.gameObject.AddComponent<Cord>();
         List<HingeJoint> joints = new List<HingeJoint>();
+
         for (int i = index; i < _jointPositions.Count; i++)
         {
             HingeJoint jointPoint = _jointPositions[i];
@@ -69,19 +79,11 @@ public class Cord : MonoBehaviour
 
     private void Draw()
     {
+        if (_jointPositions == null) return;
         for (int i = 0; i < _countPoint; i++)
         {
             _lineRenderer.positionCount = i + 1;
-
-            if (_jointPositions[i] == null)
-            {
-                _jointPositions[i] = gameObject.AddComponent<HingeJoint>();
-            }
-
-            if (_jointPositions[i])
-            {
-                _lineRenderer.SetPosition(i, _jointPositions[i].transform.position);
-            }
+            _lineRenderer.SetPosition(i, _jointPositions[i] == null ? gameObject.transform.position : _jointPositions[i].transform.position);
         }
     }
 }
