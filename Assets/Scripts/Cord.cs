@@ -4,9 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class Cord : MonoBehaviour
 {
-    private List<HingeJoint> _jointPositions;
+    [SerializeField] private List<HingeJoint> _jointPositions;
     private LineRenderer _lineRenderer;
     private int _countPoint;
+
+    public int CountPoint => _jointPositions.Count;
 
     public void Initialized()
     {
@@ -32,7 +34,6 @@ public class Cord : MonoBehaviour
         if (_jointPositions == null) return;
         _countPoint = _jointPositions.Count;
         _lineRenderer.positionCount = _countPoint;
-
     }
     
     public void CreateCord(List<HingeJoint> joints, float width, Material material, Gradient color)
@@ -67,13 +68,12 @@ public class Cord : MonoBehaviour
     {
         Cord cord = joint.gameObject.AddComponent<Cord>();
         List<HingeJoint> joints = new List<HingeJoint>();
-
         for (int i = index; i < _jointPositions.Count; i++)
         {
             HingeJoint jointPoint = _jointPositions[i];
+            jointPoint.GetComponent<Point>().Cord = cord;
             joints.Add(jointPoint);
         }
-
         cord.CreateCord(joints, _lineRenderer.startWidth, _lineRenderer.material, _lineRenderer.colorGradient);
     }
 

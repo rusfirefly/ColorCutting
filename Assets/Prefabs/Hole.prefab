@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410288962044098493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.297, y: 0.065, z: 1.499}
-  m_LocalScale: {x: 1.5786527, y: 0.19676615, z: 1.5656}
+  m_LocalPosition: {x: -1.297, y: 0.065, z: 1.2887}
+  m_LocalScale: {x: 1.5786527, y: 0.19676615, z: 1.1449233}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 704451656272688753}
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b495d02bf057da94cbb07443096fa442, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 704451656272688754}
   - component: {fileID: 704451656272688756}
   - component: {fileID: 704451656272688755}
+  - component: {fileID: 774838232}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Untagged
@@ -158,9 +159,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704451656272688747}
-  m_LocalRotation: {x: -0.12362297, y: 0.0011960812, z: 0.0000008492718, w: 0.9923286}
+  m_LocalRotation: {x: -0.12361885, y: 0.0011940312, z: 0.000003862268, w: 0.99232906}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1470785, y: 1.1470785, z: 1.1470785}
+  m_LocalScale: {x: 0.63924694, y: 0.63924706, z: 0.639247}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3960517027970326143}
@@ -918,7 +919,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1980
+  m_VersionIndex: 1992
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -975,7 +976,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f39ce6f0d3147354989be24ad907669b, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1035,6 +1036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collected: {fileID: 1518106688603611428}
   _maxCount: 5
+  _holeComplete: {fileID: 2650518511845273832}
 --- !u!64 &704451656272688755
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1049,6 +1051,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &774838232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704451656272688747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415279540624cc44ea7b0030c9b1d469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 0}
+  <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
 --- !u!1 &1513585377933849859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,7 +1263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1549073369098159326
 RectTransform:
   m_ObjectHideFlags: 0

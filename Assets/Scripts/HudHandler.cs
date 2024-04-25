@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HudHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject _complete;
+    [SerializeField] private Text _levelName;
+    [SerializeField] private Text _cutText;
+
+    public void SetLavelNunber(int levelNumvber) => _levelName.text = $"Level {levelNumvber}";
+
+    public void ShowCompleteLevel()
     {
-        
+        _complete.gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void SetCutText(int countCut) => _cutText.text = $"{countCut}";
 }

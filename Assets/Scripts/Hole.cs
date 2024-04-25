@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,10 +6,14 @@ public class Hole : MonoBehaviour
 {
     [SerializeField] private Collected _collected;
     [SerializeField] private int _maxCount;
+    [SerializeField] private GameObject _holeComplete;
+
+    private ColorPoint _holePoint;
 
     private void Start()
     {
-        _collected.Initialized(_maxCount);
+        _holePoint = GetComponent<ColorPoint>();
+        _collected.Initialized(_maxCount, _holePoint);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -20,5 +25,9 @@ public class Hole : MonoBehaviour
         }
     }
 
+    public void Complete()
+    {
+        _holeComplete.gameObject.SetActive(true);
+    }
 
 }
