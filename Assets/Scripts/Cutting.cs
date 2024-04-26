@@ -8,109 +8,114 @@ public class Cutting : MonoBehaviour
     public event Action<int> Cut;
 
     [SerializeField] private Cord _cord;
-    [SerializeField] private LineRenderer _lineCut;
     [SerializeField] private LayerMask _pointMask;
-    [SerializeField] private int _countCut;
-
-    private Vector3 _startPosition;
-    private Vector3 _endPosition;
+    [field:SerializeField] public int CountCut { get; private set; }
+    [SerializeField] private GameObject _cutView;
     private float _zPosition;
     private HingeJoint point;
     private bool _isComplete;
-    private bool _isCut;
+    private bool _isCutVisible;
+    private bool _isLastCut;
 
     private void Start()
     {
-        _lineCut = GetComponent<LineRenderer>();
-        _lineCut.positionCount = 2;
-        _zPosition = _cord.transform.position.z - Camera.main.transform.position.z;
-        Cut?.Invoke(_countCut);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        _zPosition = _cord.transform.position.z;
+        Cut?.Invoke(CountCut);
     }
 
     private void Update()
     {
         if (_isComplete) return;
 
-        if (_countCut < 0 && _isCut)
+        if (_isLastCut)
         {
-            StartCoroutine(WaitPointFly());
-            _isCut = false;
-            return;
+            //StartCoroutine(WaitPointFly());
+            Lose?.Invoke();
+            _isComplete = true;
         }
 
-
-
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = _zPosition - 2f;
-
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0)
         {
-            _startPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            _lineCut.positionCount = 2;
-            _lineCut.SetPosition(0, _startPosition);
-        }
+            Touch touch = Input.GetTouch(0);
 
-        if (Input.GetMouseButton(0))
-        {
-            if (_lineCut.positionCount <=1 ) return;
-            _endPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            _lineCut.SetPosition(1, _endPosition);
-            Debug.DrawRay(_endPosition, Vector3.forward, Color.red, 100f);
-
-            if (Physics.Raycast(_endPosition, Vector3.forward, out RaycastHit hit, _pointMask))
+            switch(touch.phase)
             {
-                if(_isCut == false)
-                {
-                    CutCord();
-                    _isCut = true;
-                }
+                case TouchPhase.Began:
+                    _isCutVisible = true;
+                    break;
+                case TouchPhase.Ended:
+                    _isCutVisible = false;
+                    break;
+                default:break;
+            }
 
+            ShowCut(_isCutVisible);
+
+            Vector3 position = Camera.main.ScreenToWorldPoint(touch.position);
+            position.z = _zPosition - 1f;
+
+            if(_cutView)
+            {
+                _cutView.transform.position = position;
+            }
+
+            Debug.DrawRay(position, Vector3.forward, Color.red, 100f);
+            if (Physics.Raycast(position, Vector3.forward, out RaycastHit hit, _pointMask))
+            {
                 point = hit.collider.gameObject.GetComponent<HingeJoint>();
                 if (point && point.tag != "FixedPoint")
                 {
                     Cord cord = point.GetComponent<Point>().Cord;
                     if (cord)
                     {
+                        if (CountCut == 0)
+                        {
+                            _isLastCut = true;
+                            return;
+                        }
+
                         cord.Cut(point);
                         Destroy(point);
-                        _lineCut.positionCount = 0;
+                        CutCord();
                     }
                 }
             }
         }
-
-        if(Input.GetMouseButtonUp(0))
-        {
-            if (_isCut == false)
-            {
-                CutCord();
-                _lineCut.positionCount = 0;
-            }
-        }
-
-        if (_countCut < 0)
-        {
-            Lose?.Invoke();
-        }
     }
 
+    public void AddCut(int count)
+    {
+        CountCut += count;
+        Cut?.Invoke(CountCut);
+        _isComplete = false;
+    }
 
     public void Complete()
     {
         _isComplete = true;
     }
 
+    private void ShowCut(bool visible)
+    {
+        _cutView.gameObject.SetActive(visible);
+    }
+
     private void CutCord()
     {
-        _countCut--;
-        if (_countCut >= 0)
-            Cut?.Invoke(_countCut);
+        CountCut--;
+        if (CountCut >= 0)
+            Cut?.Invoke(CountCut);
     }
 
     private IEnumerator WaitPointFly()
     {
-        yield return new WaitForSeconds(5f);
-        if(_isComplete == false)
+        yield return new WaitForSeconds(1.5f);
+        if (_isComplete == false)
+        {
             Lose?.Invoke();
+            _isComplete = true;
+        }
     }
 }

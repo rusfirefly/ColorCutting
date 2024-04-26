@@ -9,6 +9,7 @@ public class PointHandler : MonoBehaviour
     public void Initialized(int maxPoint)
     {
         _maxPoint = maxPoint;
+
     }
 
     private void OnEnable()
@@ -37,6 +38,7 @@ public class PointHandler : MonoBehaviour
 
     private void CheckCountPoint()
     {
+
         if (_maxPoint == 0)
         {
             NullPoint?.Invoke();

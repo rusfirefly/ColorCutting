@@ -42,7 +42,7 @@ public class Level : MonoBehaviour
         if(_isComplete == false)
         {
             _holeComplete = 0;
-            Reload();
+            _hud.SetVisibleFailLevel(true);
         }
     }
 
@@ -53,7 +53,7 @@ public class Level : MonoBehaviour
 
     private void OnLose()
     {
-        Reload();
+        _hud.SetVisibleFailLevel(true);
     }
 
     private void OnComplete()
@@ -78,4 +78,12 @@ public class Level : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
+    public void AddCut(int count)=>_cutting.AddCut(count);
+
+    public void ShowAdvertisement()
+    {
+        Debug.Log("реклама");
+        _cutting.AddCut(3);///временно
+        _hud.SetVisibleFailLevel(false);
+    }
 }

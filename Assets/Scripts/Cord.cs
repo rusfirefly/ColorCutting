@@ -4,6 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class Cord : MonoBehaviour
 {
+    [SerializeField] private HingeJoint _startFixedPoint;
+    [SerializeField] private HingeJoint _endFixedPoint;
+
     [SerializeField] private List<HingeJoint> _jointPositions;
     private LineRenderer _lineRenderer;
     private int _countPoint;
@@ -26,9 +29,26 @@ public class Cord : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
 
         HingeJoint[] joints = GetComponentsInChildren<HingeJoint>();
+
+        if (_startFixedPoint)
+        {
+            Cord cord = joints[0].GetComponent<Point>().Cord;
+            _startFixedPoint.GetComponent<Point>().Cord = cord;
+            _jointPositions.Add(_startFixedPoint);
+            joints[0].connectedBody = _startFixedPoint.GetComponent<Rigidbody>();
+        }
+
         foreach (HingeJoint joint in joints)
         {
             _jointPositions.Add(joint);
+        }
+
+        if (_endFixedPoint)
+        {
+            Cord cord = GetCord(_jointPositions.Count - 1);
+            _endFixedPoint.connectedBody = _jointPositions[_jointPositions.Count-1].GetComponent<Rigidbody>();
+            _endFixedPoint.GetComponent<Point>().Cord = cord;
+            _jointPositions.Add(_endFixedPoint);
         }
 
         if (_jointPositions == null) return;
@@ -63,6 +83,8 @@ public class Cord : MonoBehaviour
         _countPoint = _lineRenderer.positionCount = 0;
         _jointPositions.Clear();
     }
+
+    private Cord GetCord(int index)=> _jointPositions[index].GetComponent<Point>().Cord;
 
     private void CreateNewCord(HingeJoint joint, int index)
     {
