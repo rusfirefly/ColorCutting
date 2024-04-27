@@ -19,6 +19,20 @@ public class Cord : MonoBehaviour
         NewCord();
     }
 
+    public int GetCountFixedPoint()
+    {
+        int countFixed = 0;
+        if(_startFixedPoint)
+        {
+            countFixed++;
+        }
+        if(_endFixedPoint)
+        {
+            countFixed++;
+        }
+        return countFixed;
+    }
+
     private void FixedUpdate()
     {
         Draw();

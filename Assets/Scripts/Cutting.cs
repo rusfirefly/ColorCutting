@@ -87,9 +87,11 @@ public class Cutting : MonoBehaviour
 
     public void AddCut(int count)
     {
-        CountCut += count;
-        Cut?.Invoke(CountCut);
+        _isLastCut = false;
         _isComplete = false;
+        CountCut += count;
+
+        Cut?.Invoke(CountCut);
     }
 
     public void Complete()

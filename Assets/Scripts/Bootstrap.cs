@@ -8,14 +8,17 @@ public class Bootstrap : MonoBehaviour
     void Start()
     {
         int maxPoint = 0;
+        int countFixedPoint = 0;
         _cords = FindObjectsOfType<Cord>();
 
         foreach (Cord cord in _cords)
         {
             cord.Initialized();
+            countFixedPoint += cord.GetCountFixedPoint();
             maxPoint += cord.CountPoint;
         }
-        _level.Initialized(maxPoint);
+        
+        _level.Initialized(maxPoint - countFixedPoint);
     }
 
 }
