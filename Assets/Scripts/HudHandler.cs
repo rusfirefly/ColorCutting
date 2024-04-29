@@ -8,6 +8,12 @@ public class HudHandler : MonoBehaviour
     [SerializeField] private Text _levelName;
     [SerializeField] private Text _cutText;
     [SerializeField] private Button _reloadButton;
+    [SerializeField] private StarView _starView;
+
+    private void Start()
+    {
+        _starView = GetComponent<StarView>();
+    }
 
     public void SetLavelNunber(int levelNumvber) => _levelName.text = $"Level {levelNumvber}";
 
@@ -15,6 +21,14 @@ public class HudHandler : MonoBehaviour
     {
         SetVisibleRelodButton(false);
         _completeLevel.gameObject.SetActive(true);
+    }
+
+    public void SetStarCompleted(int countStar)
+    {
+        for(int i = 0; i < countStar; i++)
+        {
+            _starView.SetStar(i);
+        }
     }
 
     public void SetVisibleFailLevel(bool visible)

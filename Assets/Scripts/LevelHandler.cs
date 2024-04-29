@@ -6,15 +6,21 @@ using UnityEngine;
 [Serializable]
 public class LevelData
 {
+    public int CurrentSeason;
     public List<LevelInformation> LevelInformation = new List<LevelInformation>();
 }
+
 
 [Serializable]
 public class LevelInformation
 {
-    public int levelNumber;
-    public int countStarCollected;
+    public int LevelNumber;
+    public int CountStarCollected;
+    public bool IsActive;
+
+    [NonSerialized] public LevelView LevelView;
 }
+
 
 public static class LevelHandler
 {
@@ -32,5 +38,4 @@ public static class LevelHandler
         string json = File.ReadAllText(_pathData);
         return JsonUtility.FromJson<LevelData>(json);
     }
-
 }

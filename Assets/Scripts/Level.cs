@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,7 @@ public class Level : MonoBehaviour
     private bool _isComplete;
     private int _holeComplete;
 
+    private int _currentSeason;
     private LevelData _levelData;
     private LevelInformation _levelInformation;
 
@@ -25,12 +27,13 @@ public class Level : MonoBehaviour
     {
         _levelInformation = new LevelInformation();
         _levelData = LevelHandler.LoadData();
-        _levelInformation.levelNumber = _levelNumber;
-        _levelInformation.countStarCollected = 0;
+        _currentSeason = _levelData.CurrentSeason;
+        _levelInformation.LevelNumber = _levelNumber;
+        _levelInformation.CountStarCollected = 0;
 
         if (_levelData != null)
         {
-            LevelInformation lavelInformation = _levelData.LevelInformation.Find(level=>level.levelNumber == _levelNumber);
+            LevelInformation lavelInformation = _levelData.LevelInformation.Find(level=>level.LevelNumber == _levelNumber);
             if(lavelInformation == null)
             {
                 _levelData.LevelInformation.Add(_levelInformation);
@@ -105,13 +108,16 @@ public class Level : MonoBehaviour
         {
             _isComplete = true;
             _cutting.Complete();
-            _hud.ShowCompleteLevel();
-            if(_starCollected > _levelInformation.countStarCollected)
+            if (_starCollected > _levelInformation.CountStarCollected)
             {
-                _levelInformation.countStarCollected = _starCollected;
+                _levelInformation.CountStarCollected = _starCollected;
                 _levelData.LevelInformation[_levelNumber - 1] = _levelInformation;
+                _levelData.LevelInformation[_levelNumber].IsActive = true;
+                Debug.Log(_levelData.LevelInformation[_levelNumber -1].LevelNumber);
                 LevelHandler.SaveData(_levelData);
             }
+            _hud.ShowCompleteLevel();
+            _hud.SetStarCompleted(_starCollected);
         }
     }
 
