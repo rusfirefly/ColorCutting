@@ -5,13 +5,9 @@ using UnityEngine.UI;
 
 public class SelectLevelHandler : MonoBehaviour
 {
-    [SerializeField] private Text _seasonName;
-    [SerializeField] private Button _nextSeasonButton;
-    [SerializeField] private Button _previewSeasonButton;
-    [SerializeField] private Text _countStarCollectedText;
     [SerializeField] private Transform _parent;
     [SerializeField] private List<LevelView> _levelViews;
-
+    [SerializeField] private LeveSelectHUD _leveSelectHUD;
 
     private int _seasonNumber;
     private LevelData _seasonsData;
@@ -58,12 +54,12 @@ public class SelectLevelHandler : MonoBehaviour
     
     private void LoadSeason()
     {
-
+        
     }
 
     private void ViewAllLevels(bool isData)
     {
-        _seasonName.text = $"Season {_seasonsData.CurrentSeason}";
+        _leveSelectHUD.SetSeasonName(_seasonsData.CurrentSeason);
         int countStarCollectedAll = 0;
         int index = 0;
 
@@ -87,6 +83,6 @@ public class SelectLevelHandler : MonoBehaviour
         }
 
         LevelHandler.SaveData(_seasonsData);
-        _countStarCollectedText.text = $"{countStarCollectedAll}/{_seasonsData.LevelInformation.Count * 3}";
+        _leveSelectHUD.SetStarCollected(countStarCollectedAll, _seasonsData.LevelInformation.Count);
     }
 }
