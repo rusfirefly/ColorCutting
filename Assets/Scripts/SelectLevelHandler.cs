@@ -25,7 +25,6 @@ public class SelectLevelHandler : MonoBehaviour
         {
             _seasonsData = new LevelData();
             _seasonsData.CurrentSeason = 1;
-
             for (int i = 0; i < _levelViews.Count; i++)
             {
                 _seasonsData.LevelInformation.Add(new LevelInformation());

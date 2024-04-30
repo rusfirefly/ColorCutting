@@ -30,7 +30,6 @@ public class LeveSelectHUD : MonoBehaviour
         
         if (numberSeason > _numberSeasonPreview)
         {
-            Debug.Log(">>");
             if (Input.deviceOrientation == DeviceOrientation.Portrait)
             {
                 position.x -= _offsetDesctop;
@@ -42,7 +41,6 @@ public class LeveSelectHUD : MonoBehaviour
         }
         else
         {
-            Debug.Log("<<");
             if (Input.deviceOrientation == DeviceOrientation.Portrait)
             {
                 position.x += _offsetDesctop;
@@ -52,7 +50,7 @@ public class LeveSelectHUD : MonoBehaviour
                 position.x += _offsetMobile;
             }
         }
-        _seasonPosition.transform.DOMoveX(position.x, 2f);
+        _seasonPosition.transform.DOMoveX(position.x, 0.05f);
         _numberSeasonPreview = numberSeason;
     }
 
