@@ -27,7 +27,12 @@ public class Level : MonoBehaviour
     {
         _levelInformation = new LevelInformation();
         _levelData = LevelHandler.LoadData();
-        _currentSeason = _levelData.CurrentSeason;
+
+        if (_levelData != null)
+            _currentSeason = _levelData.CurrentSeason;
+        else
+            _currentSeason = 1;
+
         _levelInformation.LevelNumber = _levelNumber;
         _levelInformation.CountStarCollected = 0;
 
@@ -113,7 +118,7 @@ public class Level : MonoBehaviour
                 _levelInformation.CountStarCollected = _starCollected;
                 _levelData.LevelInformation[_levelNumber - 1] = _levelInformation;
                 _levelData.LevelInformation[_levelNumber].IsActive = true;
-                Debug.Log(_levelData.LevelInformation[_levelNumber -1].LevelNumber);
+                Debug.Log(_levelData.LevelInformation[_levelNumber - 1].LevelNumber);
                 LevelHandler.SaveData(_levelData);
             }
             _hud.ShowCompleteLevel();

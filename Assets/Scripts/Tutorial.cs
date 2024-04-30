@@ -9,12 +9,15 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private float _speedAnimation;
 
     [SerializeField] private bool _isPlayAnimation;
+    [SerializeField] private Transform _startPosition;
+
     private Vector3 _position;
 
     private void Start()
     {
         _position = _image.transform.localPosition;
         _isPlayAnimation = true;
+      
     }
 
     private void Update()
@@ -29,6 +32,11 @@ public class Tutorial : MonoBehaviour
             _position.x = Mathf.PingPong(Time.time * _speedAnimation, _xMaxPosition - _xMinPosition) + _xMinPosition;
             _image.transform.localPosition = _position;
         }
+    }
+
+    private void OnValidate()
+    {
+        _image.transform.position = Camera.main.WorldToScreenPoint(_startPosition.position);
     }
 
     public void StartAnimation() => _isPlayAnimation = true;

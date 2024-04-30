@@ -42,19 +42,19 @@ public class SelectLevelHandler : MonoBehaviour
 
     public void NextSason()
     {
-        _seasonNumber++;
+        _seasonNumber = Mathf.Clamp(++_seasonNumber, 1, 4);
         LoadSeason();
     }
 
     public void PreviwSeason()
     {
-        _seasonNumber--;
+        _seasonNumber = Mathf.Clamp(--_seasonNumber, 1 , 4);
         LoadSeason();
     }
     
     private void LoadSeason()
     {
-        
+        _leveSelectHUD.SelectSeason(_seasonNumber);
     }
 
     private void ViewAllLevels(bool isData)

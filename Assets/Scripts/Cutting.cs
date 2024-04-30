@@ -16,11 +16,13 @@ public class Cutting : MonoBehaviour
     private bool _isComplete;
     private bool _isCutVisible;
     private bool _isLastCut;
+    private Vector3 _positionCursor;
+    private bool _isTouch;
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         _zPosition = _cord.transform.position.z;
         Cut?.Invoke(CountCut);
     }
@@ -31,29 +33,48 @@ public class Cutting : MonoBehaviour
 
         if (_isLastCut)
         {
-            //StartCoroutine(WaitPointFly());
             Lose?.Invoke();
             _isComplete = true;
         }
 
         if (Input.touchCount > 0)
         {
+            _isTouch = true;
             Touch touch = Input.GetTouch(0);
-
-            switch(touch.phase)
+            switch (touch.phase)
             {
                 case TouchPhase.Began:
                     _isCutVisible = true;
                     break;
                 case TouchPhase.Ended:
                     _isCutVisible = false;
+                    _isTouch = false;
                     break;
-                default:break;
+                default: break;
             }
-
+            _positionCursor = touch.position;
             ShowCut(_isCutVisible);
+        }
+        else
+        {
+            if (Input.GetMouseButton(0))
+            {
+                _isTouch = true;
+                _positionCursor = Input.mousePosition;
+                ShowCut(_isCutVisible);
+                _isCutVisible = true;
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                _isCutVisible = false;
+                _isTouch = false;
+            }
+        }
 
-            Vector3 position = Camera.main.ScreenToWorldPoint(touch.position);
+        if (_isTouch)
+        {
+
+            Vector3 position = Camera.main.ScreenToWorldPoint(_positionCursor);
             position.z = _zPosition - 1f;
 
             if(_cutView)
