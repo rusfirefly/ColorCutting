@@ -9,15 +9,42 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectedLevels.unity
     guid: 8567949771e7f534db1f8bf95b0cd787
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/Season1/Level 1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
-    guid: 593f3b8817782ac4aa28adaa2361f537
+    path: Assets/Scenes/Season1/Level 2.unity
+    guid: 2a5b77650633a8b42a87c572d3c27ceb
   - enabled: 1
-    path: Assets/Scenes/Level 3.unity
+    path: Assets/Scenes/Season1/Level 3.unity
     guid: 1dce88cc3fe635244b1f1c85acf63ba3
   - enabled: 1
-    path: Assets/Scenes/Level 4.unity
-    guid: 2a5b77650633a8b42a87c572d3c27ceb
+    path: Assets/Scenes/Season1/Level 4.unity
+    guid: 7adbede30f3bd11408e66ab1274a6049
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 5.unity
+    guid: 97a0722efa0cf834b92200c277f5d788
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 6.unity
+    guid: fa0d6fc43b5cd64419a28dd594429b59
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 7.unity
+    guid: 3eaf1aea23949b84e9c7ad7b940208bd
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 8.unity
+    guid: 66e9b9b2c3ed29744a39514dcef57bb6
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 9.unity
+    guid: 62646d3235d7d6447920569701748c90
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 10.unity
+    guid: f17addf4edce2f241a6530e52f8c9a81
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 11.unity
+    guid: 600302ba10edf774492eea6d8010f1c3
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 12.unity
+    guid: ef273297349cb984ebc76449e324564f
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 13.unity
+    guid: d1190517247829948ae3d8bb4267d3fc
   m_configObjects: {}

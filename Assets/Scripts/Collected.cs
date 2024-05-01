@@ -11,10 +11,12 @@ public class Collected : MonoBehaviour
     private int _maxCount;
     private int _count;
     private ColorPoint _holeColor;
+    private Animation _animation;
 
     private void Start()
     {
         _hole = GetComponentInParent<Hole>();
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -26,13 +28,15 @@ public class Collected : MonoBehaviour
             {
                 _count++;
                 SetCountToText(_count);
+                if(_animation.isPlaying == false)
+                _animation.Play();
             }
             else
             {
                 Point point = collision.gameObject.GetComponent<Point>();
                 if (point)
                 {
-                    point.StartBoomEffect();
+                    point.CollectedEffect();
                 }
             }
         }
@@ -47,10 +51,14 @@ public class Collected : MonoBehaviour
         Destroy(collision.gameObject);
     }
 
-    public void Initialized(int maxCount, ColorPoint holeColor)
+    public void Initialized(int maxCount, ColorPoint holeColor, Animation animation)
     {
         _holeColor = holeColor;
         _maxCount = maxCount;
+        _animation = animation;
+
+        _animation.Stop();
+
         SetCountToText(_count);
     }
 

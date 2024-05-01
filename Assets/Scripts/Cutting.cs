@@ -23,7 +23,9 @@ public class Cutting : MonoBehaviour
     {
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
-        _zPosition = _cord.transform.position.z;
+        if(_cord)
+            _zPosition = _cord.transform.position.z;
+
         Cut?.Invoke(CountCut);
     }
 

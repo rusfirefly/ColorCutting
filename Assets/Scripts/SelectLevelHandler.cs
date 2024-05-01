@@ -1,11 +1,8 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SelectLevelHandler : MonoBehaviour
 {
-    [SerializeField] private Transform _parent;
     [SerializeField] private List<LevelView> _levelViews;
     [SerializeField] private LeveSelectHUD _leveSelectHUD;
 
@@ -41,13 +38,16 @@ public class SelectLevelHandler : MonoBehaviour
 
     public void NextSason()
     {
-        _seasonNumber = Mathf.Clamp(++_seasonNumber, 1, 4);
+        _seasonNumber++;
+        _seasonNumber = Mathf.Clamp(_seasonNumber, 1, 4);
         LoadSeason();
     }
 
     public void PreviwSeason()
     {
-        _seasonNumber = Mathf.Clamp(--_seasonNumber, 1 , 4);
+        _seasonNumber--;
+        _seasonNumber = Mathf.Clamp(_seasonNumber, 1 , 4);
+        
         LoadSeason();
     }
     

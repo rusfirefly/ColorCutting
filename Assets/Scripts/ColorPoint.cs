@@ -12,4 +12,11 @@ public class ColorPoint : MonoBehaviour
         if (_material)
             _material.color = Color;
     }
+
+    public void SetColor(Color color)
+    {
+        Color = color;
+        _material.color = Color;
+    }
+
 }

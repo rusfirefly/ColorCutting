@@ -3286,10 +3286,10 @@ RectTransform:
   - {fileID: 2127882396}
   m_Father: {fileID: 891237925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 16, y: 376}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 100, y: -2052}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &372709685
 GameObject:
@@ -3528,6 +3528,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8890866731f15043ac096bdfa7afce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &381270343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 381270345}
+  - component: {fileID: 381270344}
+  m_Layer: 0
+  m_Name: Yandex
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &381270344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381270343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d110cabb9111eae4aa46fcc787a77399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &381270345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381270343}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6856.817, y: 1117.7677, z: -2.9529862}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &417518344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8883,7 +8927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986fceda8dcf83546b0d26e61e58de36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parent: {fileID: 1753240926}
   _levelViews:
   - {fileID: 1226655288}
   - {fileID: 264661822}
@@ -8989,8 +9032,7 @@ MonoBehaviour:
   - {fileID: 2127882396}
   _seasonPosition: {fileID: 360130562}
   _seasonNumber: 1
-  _offsetMobile: 1465
-  _offsetDesctop: 4000
+  _offsetPositionX: 1455
 --- !u!1001 &1164703889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15248,3 +15290,4 @@ SceneRoots:
   - {fileID: 1138607113}
   - {fileID: 891237925}
   - {fileID: 372709688}
+  - {fileID: 381270345}

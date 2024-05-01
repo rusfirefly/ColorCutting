@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    [SerializeField] private Image _image;
+    [SerializeField] private Image _hand1;
+    [SerializeField] private Image _hand2;
     [SerializeField] private float _xMinPosition;
     [SerializeField] private float _xMaxPosition;
     [SerializeField] private float _speedAnimation;
@@ -15,9 +16,8 @@ public class Tutorial : MonoBehaviour
 
     private void Start()
     {
-        _position = _image.transform.localPosition;
+        _position = _hand1.transform.localPosition;
         _isPlayAnimation = true;
-      
     }
 
     private void Update()
@@ -30,20 +30,20 @@ public class Tutorial : MonoBehaviour
         if(_isPlayAnimation)
         {
             _position.x = Mathf.PingPong(Time.time * _speedAnimation, _xMaxPosition - _xMinPosition) + _xMinPosition;
-            _image.transform.localPosition = _position;
+            _hand1.transform.localPosition = _position;
         }
     }
 
     private void OnValidate()
     {
-        _image.transform.position = Camera.main.WorldToScreenPoint(_startPosition.position);
+        _hand1.transform.position = Camera.main.WorldToScreenPoint(_startPosition.position);
     }
 
     public void StartAnimation() => _isPlayAnimation = true;
 
     public void StopAnimation()
     {
-        _image.gameObject.SetActive(false);
+        _hand1.gameObject.SetActive(false);
         gameObject.SetActive(false);
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6022,6 +6022,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8890866731f15043ac096bdfa7afce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &691712864 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2459630637290831049, guid: 5e5d7f0996ca0154981385065dc44724, type: 3}
+  m_PrefabInstance: {fileID: 145624182}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8890866731f15043ac096bdfa7afce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &709644091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6690,7 +6701,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 850463378}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1138607114}
+        m_TargetAssemblyTypeName: SelectLevelHandler, Assembly-CSharp
+        m_MethodName: NextSason
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &850463378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6810,7 +6833,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 875058223}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1138607114}
+        m_TargetAssemblyTypeName: SelectLevelHandler, Assembly-CSharp
+        m_MethodName: PreviwSeason
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &875058223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8189,6 +8224,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9213766873621621187, guid: 5e5d7f0996ca0154981385065dc44724, type: 3}
   m_PrefabInstance: {fileID: 1060252546}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1060252548 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2459630637290831049, guid: 5e5d7f0996ca0154981385065dc44724, type: 3}
+  m_PrefabInstance: {fileID: 1060252546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8890866731f15043ac096bdfa7afce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1070021577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8820,7 +8866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986fceda8dcf83546b0d26e61e58de36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parent: {fileID: 1753240926}
   _levelViews:
   - {fileID: 1226655288}
   - {fileID: 264661822}
@@ -8842,6 +8887,66 @@ MonoBehaviour:
   - {fileID: 2147467834}
   - {fileID: 1028600406}
   - {fileID: 178117680}
+  - {fileID: 1060252548}
+  - {fileID: 954300121}
+  - {fileID: 1308958486}
+  - {fileID: 1518903070}
+  - {fileID: 845588057}
+  - {fileID: 1506142947}
+  - {fileID: 1246485085}
+  - {fileID: 910940592}
+  - {fileID: 1265895299}
+  - {fileID: 1803492441}
+  - {fileID: 1324765511}
+  - {fileID: 485242326}
+  - {fileID: 952306966}
+  - {fileID: 1332566070}
+  - {fileID: 2138421157}
+  - {fileID: 1722303614}
+  - {fileID: 1299662282}
+  - {fileID: 1512915123}
+  - {fileID: 1415160739}
+  - {fileID: 286739560}
+  - {fileID: 1707495424}
+  - {fileID: 417518346}
+  - {fileID: 452722181}
+  - {fileID: 1128137116}
+  - {fileID: 1012979152}
+  - {fileID: 603205107}
+  - {fileID: 2063876887}
+  - {fileID: 1513403068}
+  - {fileID: 758532024}
+  - {fileID: 1839641055}
+  - {fileID: 1246591876}
+  - {fileID: 278723889}
+  - {fileID: 478911334}
+  - {fileID: 91510539}
+  - {fileID: 1781929891}
+  - {fileID: 2054082230}
+  - {fileID: 376566523}
+  - {fileID: 589922464}
+  - {fileID: 1102720584}
+  - {fileID: 630795616}
+  - {fileID: 691712864}
+  - {fileID: 1666027556}
+  - {fileID: 2141591676}
+  - {fileID: 609462100}
+  - {fileID: 646553655}
+  - {fileID: 351338702}
+  - {fileID: 1648831801}
+  - {fileID: 524530543}
+  - {fileID: 1724547105}
+  - {fileID: 566944068}
+  - {fileID: 56612056}
+  - {fileID: 110100470}
+  - {fileID: 1263637192}
+  - {fileID: 31746687}
+  - {fileID: 157386399}
+  - {fileID: 493489969}
+  - {fileID: 1388513154}
+  - {fileID: 1754009662}
+  - {fileID: 246633884}
+  - {fileID: 1484979349}
   _leveSelectHUD: {fileID: 1138607115}
 --- !u!114 &1138607115
 MonoBehaviour:
@@ -8859,32 +8964,14 @@ MonoBehaviour:
   _previewSeasonButton: {fileID: 875058222}
   _seasonName: {fileID: 215287883}
   _countStarCollectedText: {fileID: 914338014}
-  _seasons: {fileID: 1873430317}
-  _moveCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  _seasons:
+  - {fileID: 544307566}
+  - {fileID: 1524870988}
+  - {fileID: 1204254104}
+  - {fileID: 2127882396}
+  _seasonPosition: {fileID: 1873430317}
   _seasonNumber: 1
+  _offsetPositionX: 1300
 --- !u!1001 &1164703889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12908,6 +12995,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8890866731f15043ac096bdfa7afce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1707495424 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2459630637290831049, guid: 5e5d7f0996ca0154981385065dc44724, type: 3}
+  m_PrefabInstance: {fileID: 580303743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8890866731f15043ac096bdfa7afce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1722303612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13246,6 +13344,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8890866731f15043ac096bdfa7afce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1739378705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1739378707}
+  - component: {fileID: 1739378706}
+  m_Layer: 0
+  m_Name: Yandex
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1739378706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739378705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d110cabb9111eae4aa46fcc787a77399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1739378707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739378705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6856.817, y: 1117.7677, z: -2.9529862}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1753240925
 GameObject:
   m_ObjectHideFlags: 0
@@ -15148,3 +15290,4 @@ SceneRoots:
   - {fileID: 1138607113}
   - {fileID: 891237925}
   - {fileID: 372709688}
+  - {fileID: 1739378707}

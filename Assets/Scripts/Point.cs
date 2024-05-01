@@ -9,6 +9,14 @@ public class Point : MonoBehaviour
     [field: SerializeField] public Cord Cord { get; set; }
 
     private bool _isCollider;
+    private bool _isDestroy;
+
+    private MeshRenderer _meshRender;
+
+    private void Start()
+    {
+        _meshRender = GetComponent<MeshRenderer>();
+   }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,19 +24,36 @@ public class Point : MonoBehaviour
 
         if(other.tag == "Ground")
         {
-            Destroed?.Invoke();
-            _isCollider = true;
-            Destroy(gameObject);
+            Destroy();
         }
     }
 
     public void StartBoomEffect()
     {
-        Debug.Log("boom!");
         if(_boomEffect)
         {
-            if (_boomEffect.isPlaying == false)
+            if (_boomEffect.isPlaying)
+            {
                 _boomEffect.Play();
+            }
+        }
+    }
+
+    public void CollectedEffect()
+    {
+
+    }
+
+    public void Destroy()
+    {
+        if (_isDestroy == false)
+        {
+            Destroed?.Invoke();
+            _isCollider = true;
+
+            StartBoomEffect();
+            Destroy(gameObject, 0.1f);
+            _isDestroy = true;
         }
     }
 }

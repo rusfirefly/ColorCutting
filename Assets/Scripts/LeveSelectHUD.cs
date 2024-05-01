@@ -12,8 +12,7 @@ public class LeveSelectHUD : MonoBehaviour
     [SerializeField] private Transform _seasonPosition;
     [SerializeField] private int _seasonNumber;
 
-    [SerializeField] private float _offsetMobile;
-    [SerializeField] private float _offsetDesctop;
+    [SerializeField] private float _offsetPositionX;
     private const int _countStarOnLevel = 3;
     private int _numberSeasonPreview;
 
@@ -30,25 +29,11 @@ public class LeveSelectHUD : MonoBehaviour
         
         if (numberSeason > _numberSeasonPreview)
         {
-            if (Input.deviceOrientation == DeviceOrientation.Portrait)
-            {
-                position.x -= _offsetDesctop;
-            }
-            else
-            {
-                position.x -= _offsetMobile;
-            }
+            position.x -= _offsetPositionX;
         }
         else
         {
-            if (Input.deviceOrientation == DeviceOrientation.Portrait)
-            {
-                position.x += _offsetDesctop;
-            }
-            else
-            {
-                position.x += _offsetMobile;
-            }
+            position.x += _offsetPositionX;
         }
         _seasonPosition.transform.DOMoveX(position.x, 0.05f);
         _numberSeasonPreview = numberSeason;
@@ -63,8 +48,8 @@ public class LeveSelectHUD : MonoBehaviour
         }
 
         SetVisibleButton(_previewSeasonButton, visible);
-
-        if (numberSeason == _seasons.Length)
+        
+        if (numberSeason >= _seasons.Length)
             SetVisibleButton(_nextSeasonButton, false);
         else
             SetVisibleButton(_nextSeasonButton, true);

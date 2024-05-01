@@ -9,11 +9,13 @@ public class Hole : MonoBehaviour
     [SerializeField] private GameObject _holeComplete;
 
     private ColorPoint _holePoint;
+    private Animation _animation;
 
     private void Start()
     {
         _holePoint = GetComponent<ColorPoint>();
-        _collected.Initialized(_maxCount, _holePoint);
+        _animation = GetComponentInParent<Animation>();
+        _collected.Initialized(_maxCount, _holePoint, _animation);
     }
 
     private void OnCollisionEnter(Collision collision)
