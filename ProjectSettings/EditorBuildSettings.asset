@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SelectedLevels.unity
-    guid: 8567949771e7f534db1f8bf95b0cd787
+    path: Assets/Scenes/Main.unity
+    guid: fafb561e3ab54d44c8f769e03517822d
   - enabled: 1
     path: Assets/Scenes/Season1/Level 1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Season1/Level 13.unity
     guid: d1190517247829948ae3d8bb4267d3fc
+  - enabled: 1
+    path: Assets/Scenes/SelectedLevelsDesctopMobile.unity
+    guid: 83429756cf533f44d8c835ec9efe87cc
+  - enabled: 1
+    path: Assets/Scenes/SelectedLevelsMobile.unity
+    guid: 9c74c4a516301a749946b497af4c0bff
   m_configObjects: {}

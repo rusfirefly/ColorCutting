@@ -25,7 +25,14 @@ public class Tutorial : MonoBehaviour
         if(Input.touchCount > 0)
         {
             StopAnimation();
+        }else
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                StopAnimation();
+            }
         }
+
 
         if(_isPlayAnimation)
         {

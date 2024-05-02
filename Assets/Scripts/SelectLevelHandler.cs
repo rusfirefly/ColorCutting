@@ -40,6 +40,7 @@ public class SelectLevelHandler : MonoBehaviour
     {
         _seasonNumber++;
         _seasonNumber = Mathf.Clamp(_seasonNumber, 1, 4);
+       
         LoadSeason();
     }
 
@@ -53,6 +54,7 @@ public class SelectLevelHandler : MonoBehaviour
     
     private void LoadSeason()
     {
+        Debug.Log(_seasonNumber);
         _leveSelectHUD.SelectSeason(_seasonNumber);
     }
 

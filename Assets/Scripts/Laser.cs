@@ -14,14 +14,14 @@ public class Laser : MonoBehaviour
     
     private float _currentTime;
 
+    private void Start()
+    {
+        Inizialized();
+    }
+
     private void OnValidate()
     {
-        _lineRender ??= GetComponent<LineRenderer>();
-        _position = transform.position;
-        _position.x += _distance;
-        _lineRender.SetPosition(0, transform.position);
-        _lineRender.SetPosition(1, _position);
-        Debug.DrawRay(transform.position, Vector3.right, Color.red, 100f);
+        Inizialized();
     }
 
     private void Update()
@@ -47,5 +47,14 @@ public class Laser : MonoBehaviour
             }
         }
     }
+    private void Inizialized()
+    {
+        _lineRender ??= GetComponent<LineRenderer>();
+        _position = transform.position;
+        _position.x += _distance;
+        _lineRender.SetPosition(0, transform.position);
+        _lineRender.SetPosition(1, _position);
+        Debug.DrawRay(transform.position, Vector3.right, Color.red, 100f);
 
+    }
 }

@@ -13,9 +13,9 @@ public class LeveSelectHUD : MonoBehaviour
     [SerializeField] private int _seasonNumber;
 
     [SerializeField] private float _offsetPositionX;
+
     private const int _countStarOnLevel = 3;
     private int _numberSeasonPreview;
-
 
     public void SetSeasonName(int seasonNumber) =>_seasonName.text = $"Season {seasonNumber}";
 
@@ -59,4 +59,6 @@ public class LeveSelectHUD : MonoBehaviour
     {
         button.gameObject.SetActive(visible);
     }
+
+
 }

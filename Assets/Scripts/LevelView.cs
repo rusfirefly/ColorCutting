@@ -17,6 +17,7 @@ public class LevelView : MonoBehaviour
     private void Start()
     {
         _levelButton = GetComponent<Button>();
+        SetActiveLevelVisible(IsActive);
     }
 
     private void OnValidate()
@@ -30,7 +31,8 @@ public class LevelView : MonoBehaviour
         _numberLevelText.text = $"{NumberLevel}";
         for (int i = 0; i < countStar; i++)
         {
-            _starView.SetStar(i);
+            if(countStar<4)
+                _starView.SetStar(i);
         }
     }
 
