@@ -7,20 +7,20 @@ using UnityEngine;
 public class LevelData
 {
     public int CurrentSeason;
+    public int ScoreAll;
     public List<LevelInformation> LevelInformation = new List<LevelInformation>();
 }
-
 
 [Serializable]
 public class LevelInformation
 {
     public int LevelNumber;
     public int CountStarCollected;
+    public int Score;
     public bool IsActive;
-
+    
     [NonSerialized] public LevelView LevelView;
 }
-
 
 public static class LevelHandler
 {

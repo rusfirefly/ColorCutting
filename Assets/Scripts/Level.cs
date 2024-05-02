@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,12 +12,12 @@ public class Level : MonoBehaviour
     [SerializeField] int _countHole;
 
     private int _starCollected;
-    private bool _isComplete;
     private int _holeComplete;
 
     private int _currentSeason;
     private LevelData _levelData;
     private LevelInformation _levelInformation;
+    private int _score;
 
     public void Start()
     {
@@ -28,16 +29,13 @@ public class Level : MonoBehaviour
         _levelInformation = new LevelInformation();
         _levelData = LevelHandler.LoadData();
 
-        if (_levelData != null)
-            _currentSeason = _levelData.CurrentSeason;
-        else
-            _currentSeason = 1;
-
         _levelInformation.LevelNumber = _levelNumber;
         _levelInformation.CountStarCollected = 0;
+        _levelInformation.Score = 0;
 
         if (_levelData != null)
         {
+            _currentSeason = _levelData.CurrentSeason;
             LevelInformation lavelInformation = _levelData.LevelInformation.Find(level=>level.LevelNumber == _levelNumber);
             if(lavelInformation == null)
             {
@@ -49,6 +47,7 @@ public class Level : MonoBehaviour
         }
         else
         {
+            _currentSeason = 1;
             CreateNewLevelData();
         }
 
@@ -59,13 +58,14 @@ public class Level : MonoBehaviour
     private void CreateNewLevelData()
     {
         _levelData = new LevelData();
+        _levelData.ScoreAll = 0;
         _levelData.LevelInformation.Add(_levelInformation);
     }
 
     private void OnEnable()
     {
-        Collected.Complete += OnComplete;
         Star.Collected += OnCollected;
+        Collected.ScoreAdd += OnScoreAdd;
         _cutting.Lose += OnLose;
         _cutting.Cut += OnCut;
         _pointHandler.NullPoint += OnNullPoint;
@@ -73,26 +73,28 @@ public class Level : MonoBehaviour
 
     private void OnDisable()
     {
-        Collected.Complete -= OnComplete;
         Star.Collected -= OnCollected;
+        Collected.ScoreAdd -= OnScoreAdd;
         _cutting.Lose -= OnLose;
         _cutting.Cut -= OnCut;
         _pointHandler.NullPoint -= OnNullPoint;
     }
 
+    private void OnScoreAdd(int scrore)
+    {
+        _score = scrore;
+    }
+
     private void OnCollected()
     {
         _starCollected++;
-        
     }
 
     private void OnNullPoint()
     {
-        if(_isComplete == false)
-        {
-            _holeComplete = 0;
-            _hud.SetVisibleFailLevel(true);
-        }
+        OnComplete();
+        _hud.ShowCompleteLevel();
+        _holeComplete = 0;
     }
 
     private void OnCut(int countCut)
@@ -111,8 +113,9 @@ public class Level : MonoBehaviour
         _holeComplete++;
         if (_holeComplete == _countHole)
         {
-            _isComplete = true;
             _cutting.Complete();
+            _levelData.ScoreAll += _score;
+            _levelData.LevelInformation[_levelNumber - 1].Score = _score;
             if (_starCollected > _levelInformation.CountStarCollected)
             {
                 _levelInformation.CountStarCollected = _starCollected;

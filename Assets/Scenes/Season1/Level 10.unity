@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1149,6 +1149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 956968812}
+  <Weight>k__BackingField: 100
   <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
 --- !u!114 &615079563
 MonoBehaviour:
@@ -1594,6 +1595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 777589603}
+  <Weight>k__BackingField: 100
   <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
 --- !u!1 &705507993
 GameObject:
@@ -1988,6 +1990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 2121086265}
+  <Weight>k__BackingField: 100
   <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
 --- !u!114 &828544945
 MonoBehaviour:
@@ -2385,6 +2388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 72866455}
+  <Weight>k__BackingField: 100
   <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
 --- !u!43 &902351020
 Mesh:
@@ -2999,6 +3003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 956968812}
+  <Weight>k__BackingField: 100
   <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
 --- !u!114 &1178438138
 MonoBehaviour:
@@ -3890,6 +3895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 777589603}
+  <Weight>k__BackingField: 100
   <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
 --- !u!114 &1665641945
 MonoBehaviour:
@@ -4115,6 +4121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 57064944}
+  <Weight>k__BackingField: 100
   <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
 --- !u!114 &1766211611
 MonoBehaviour:
@@ -4643,6 +4650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 72866455}
+  <Weight>k__BackingField: 100
   <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
 --- !u!114 &1952203536
 MonoBehaviour:
@@ -5417,6 +5425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 956968812}
+  <Weight>k__BackingField: 100
   <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
 --- !u!1001 &4812258966153276598
 PrefabInstance:
@@ -5694,6 +5703,14 @@ PrefabInstance:
     - target: {fileID: 8719557874302481320, guid: 59db17fdfba70cb4fa41e00590f3cd13, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031611250729469711, guid: 59db17fdfba70cb4fa41e00590f3cd13, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 575971154}
+    - target: {fileID: 9031611250729469711, guid: 59db17fdfba70cb4fa41e00590f3cd13, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reload
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

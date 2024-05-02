@@ -5,19 +5,11 @@ using UnityEngine.UI;
 public class Collected : MonoBehaviour
 {
     [SerializeField] private Text _textCount;
-    private Hole _hole;
-    public static event Action Complete;
     public static event Action CollectedPoint;
-    private int _maxCount;
-    private int _count;
+    public static event Action<int> ScoreAdd;
+    private int _score;
     private ColorPoint _holeColor;
     private Animation _animation;
-
-    private void Start()
-    {
-        _hole = GetComponentInParent<Hole>();
-
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -26,8 +18,9 @@ public class Collected : MonoBehaviour
         {
             if (_holeColor.Color == colorPoint.Color)
             {
-                _count++;
-                SetCountToText(_count);
+                _score += colorPoint.Weight;
+                ScoreAdd?.Invoke(_score);
+                SetCountToText(_score);
                 if(_animation.isPlaying == false)
                 _animation.Play();
             }
@@ -41,26 +34,17 @@ public class Collected : MonoBehaviour
             }
         }
 
-        if (_count == _maxCount)
-        {
-            Complete?.Invoke();
-            _hole.Complete();
-        }
-
         CollectedPoint?.Invoke();
         Destroy(collision.gameObject);
     }
 
-    public void Initialized(int maxCount, ColorPoint holeColor, Animation animation)
+    public void Initialized(ColorPoint holeColor, Animation animation)
     {
         _holeColor = holeColor;
-        _maxCount = maxCount;
         _animation = animation;
-
         _animation.Stop();
-
-        SetCountToText(_count);
+        SetCountToText(_score);
     }
 
-    private void SetCountToText(int count) => _textCount.text = $"{count}/{_maxCount}";
+    private void SetCountToText(int count) => _textCount.text = $"{count}";
 }

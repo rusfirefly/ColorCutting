@@ -4,6 +4,7 @@ using UnityEngine;
 public class Point : MonoBehaviour
 {
     public static event Action Destroed;
+
     [SerializeField] private ParticleSystem _boomEffect;
 
     [field: SerializeField] public Cord Cord { get; set; }

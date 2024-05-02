@@ -3,7 +3,7 @@ using UnityEngine;
 public class ColorPoint : MonoBehaviour
 {
     [SerializeField] private Material _material;
-
+    [field: SerializeField] public int Weight { get; private set; }
     [field: SerializeField] public Color Color { get; private set; }
 
     private void Start()
