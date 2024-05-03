@@ -8,6 +8,21 @@ mergeInto(LibraryManager.library, {
     MyGameInstance.SendMessage("Yandex","SetPlatform", platform);
   },
 
+ SaveData:function(data)
+ {
+  var dataString = UTF8ToString(data);
+  var object = JSON.parse(dataString);
+  player.setData(object);
+ },
+
+ LoadData:function()
+ {
+   player.getData().then(_data=>{
+    const json = JSON.stringify(_data);
+    MyGameInstance.SendMessage("Yandex","LoadData",json);
+   });
+ },
+
   RateGame:function(){
     ysdk.feedback.canReview()
     .then(({ value, reason }) => {

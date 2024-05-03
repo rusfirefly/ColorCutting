@@ -18,6 +18,9 @@ public class Level : MonoBehaviour
     private LevelData _levelData;
     private LevelInformation _levelInformation;
     private int _score;
+    private int _pointCount;
+    private int _maxPoint;
+    private int _currentScore;
 
     public void Start()
     {
@@ -26,6 +29,8 @@ public class Level : MonoBehaviour
 
     public void Initialized(int maxPoint)
     {
+        _currentScore = 0;
+        _maxPoint = maxPoint;
         _levelInformation = new LevelInformation();
         _levelData = LevelHandler.LoadData();
 
@@ -43,6 +48,7 @@ public class Level : MonoBehaviour
             }else
             {
                 _levelInformation = lavelInformation;
+                _currentScore = _levelData.ScoreAll - _levelInformation.Score;
             }
         }
         else
@@ -51,8 +57,9 @@ public class Level : MonoBehaviour
             CreateNewLevelData();
         }
 
-        _hud.SetLavelNunber(_levelNumber);
+        _hud.SetLavelNumber(_levelNumber);
         _pointHandler.Initialized(maxPoint);
+        _hud.SetScoreText(_currentScore);
     }
 
     private void CreateNewLevelData()
@@ -83,6 +90,9 @@ public class Level : MonoBehaviour
     private void OnScoreAdd(int scrore)
     {
         _score = scrore;
+        _currentScore += _score;
+        _hud.SetScoreText(_currentScore);
+        _pointCount++;
     }
 
     private void OnCollected()
@@ -114,16 +124,37 @@ public class Level : MonoBehaviour
         if (_holeComplete == _countHole)
         {
             _cutting.Complete();
-            _levelData.ScoreAll += _score;
-            _levelData.LevelInformation[_levelNumber - 1].Score = _score;
+            bool isNewScore = false;
+            bool isNewStarCollected = false;
+            int scoreOld = _levelData.LevelInformation[_levelNumber - 1].Score;
+            if (_score > scoreOld)
+            {
+                _levelData.ScoreAll -= scoreOld;
+                _levelData.ScoreAll += _score;
+                _levelData.LevelInformation[_levelNumber - 1].Score = _score;
+
+                if (_pointCount == _maxPoint)
+                {
+                    _levelData.LevelInformation[_levelNumber - 1].IsCompleted = true;
+                }
+
+                isNewScore = true;
+            }
+
             if (_starCollected > _levelInformation.CountStarCollected)
             {
                 _levelInformation.CountStarCollected = _starCollected;
                 _levelData.LevelInformation[_levelNumber - 1] = _levelInformation;
+                isNewStarCollected = true;
+            }
+
+            
+            if (isNewScore || isNewStarCollected)
+            {
                 _levelData.LevelInformation[_levelNumber].IsActive = true;
-                Debug.Log(_levelData.LevelInformation[_levelNumber - 1].LevelNumber);
                 LevelHandler.SaveData(_levelData);
             }
+
             _hud.ShowCompleteLevel();
             _hud.SetStarCompleted(_starCollected);
         }
@@ -149,4 +180,6 @@ public class Level : MonoBehaviour
         _cutting.AddCut(3);///временно
         Time.timeScale = 1;
     }
+
+
 }

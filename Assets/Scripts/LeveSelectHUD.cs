@@ -8,6 +8,7 @@ public class LeveSelectHUD : MonoBehaviour
     [SerializeField] private Button _previewSeasonButton;
     [SerializeField] private Text _seasonName;
     [SerializeField] private Text _countStarCollectedText;
+    [SerializeField] private Text _scoreText;
     [SerializeField] private Transform[] _seasons;
     [SerializeField] private Transform _seasonPosition;
     [SerializeField] private int _seasonNumber;
@@ -16,6 +17,8 @@ public class LeveSelectHUD : MonoBehaviour
 
     private const int _countStarOnLevel = 3;
     private int _numberSeasonPreview;
+
+    public void SetScoreText(int score) => _scoreText.text = $"Score: {score}";
 
     public void SetSeasonName(int seasonNumber) =>_seasonName.text = $"Season {seasonNumber}";
 

@@ -12,11 +12,16 @@ public class SelectLevelHandler : MonoBehaviour
     private void Start()
     {
         Initialized();
+        YandexSDK.LoadData();
     }
 
     public void Initialized()
     {
+        #if UNIT_EDITOR
         _seasonsData = LevelHandler.LoadData();
+        #endif
+        _seasonsData = YandexSDK.LevelDataLoad;
+        
         bool isData = false;
         if(_seasonsData == null)
         {
@@ -68,12 +73,20 @@ public class SelectLevelHandler : MonoBehaviour
         {
             int numberLevel = isData ? levelInformation.LevelNumber : _levelViews[index].NumberLevel;
             bool activeLevel = isData ? levelInformation.IsActive : _levelViews[index].IsActive;
+            bool isCompleted = isData ? levelInformation.IsCompleted : false;
             int countStarCollected = isData ? levelInformation.CountStarCollected : 0;
+
             countStarCollectedAll += levelInformation.CountStarCollected;
+
             _levelViews[index].LoadLevelInformation(countStarCollected);
             _levelViews[index].SetActiveLevelVisible(activeLevel);
 
-            if(isData == false)
+            if (isCompleted)
+            {
+                _levelViews[index].Completed();
+            }
+
+            if (isData == false)
             {
                levelInformation.LevelNumber = numberLevel;
                levelInformation.IsActive = activeLevel;
@@ -83,7 +96,11 @@ public class SelectLevelHandler : MonoBehaviour
             index++;
         }
 
+#if UNIT_EDITOR
         LevelHandler.SaveData(_seasonsData);
+#endif
+        YandexSDK.SaveData(_seasonsData);
         _leveSelectHUD.SetStarCollected(countStarCollectedAll, _seasonsData.LevelInformation.Count);
+        _leveSelectHUD.SetScoreText(_seasonsData.ScoreAll);
     }
 }

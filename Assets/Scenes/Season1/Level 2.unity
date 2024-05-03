@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -236,7 +236,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.003921569, g: 1, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 0.67668825, b: 0, a: 1}
     - _Color: {r: 0.003921569, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -354,7 +354,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.003921569, g: 1, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 0.67668825, b: 0, a: 1}
     - _Color: {r: 0.003921569, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 777589603}
   <Weight>k__BackingField: 100
-  <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
+  <Color>k__BackingField: {r: 1, g: 0.67668825, b: 0, a: 1}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,7 +1417,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.003921569, g: 1, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 0.67668825, b: 0, a: 1}
     - _Color: {r: 0.003921569, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -1647,7 +1647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 72866455}
   <Weight>k__BackingField: 100
-  <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
+  <Color>k__BackingField: {r: 1, g: 0.67668825, b: 0, a: 1}
 --- !u!43 &902351020
 Mesh:
   m_ObjectHideFlags: 0
@@ -1926,7 +1926,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.003921569, g: 1, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 0.67668825, b: 0, a: 1}
     - _Color: {r: 0.003921569, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -2181,7 +2181,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.003921569, g: 1, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 0.67668825, b: 0, a: 1}
     - _Color: {r: 0.003921569, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -2422,7 +2422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 2121086265}
   <Weight>k__BackingField: 100
-  <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
+  <Color>k__BackingField: {r: 1, g: 0.67668825, b: 0, a: 1}
 --- !u!850595691 &1244415919
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -2712,7 +2712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 956968812}
   <Weight>k__BackingField: 100
-  <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
+  <Color>k__BackingField: {r: 1, g: 0.67668825, b: 0, a: 1}
 --- !u!1001 &1403022296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3057,7 +3057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 57064944}
   <Weight>k__BackingField: 100
-  <Color>k__BackingField: {r: 0.003921569, g: 1, b: 0, a: 1}
+  <Color>k__BackingField: {r: 1, g: 0.67668825, b: 0, a: 1}
 --- !u!1 &1700467902
 GameObject:
   m_ObjectHideFlags: 0
@@ -3701,7 +3701,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.003921569, g: 1, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 0.67668825, b: 0, a: 1}
     - _Color: {r: 0.003921569, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -3718,6 +3718,14 @@ PrefabInstance:
       propertyPath: _material
       value: 
       objectReference: {fileID: 978071567}
+    - target: {fileID: 774838232, guid: a7c7bb7c627804440aec9b40b8c6c57a, type: 3}
+      propertyPath: <Color>k__BackingField.g
+      value: 0.67668825
+      objectReference: {fileID: 0}
+    - target: {fileID: 774838232, guid: a7c7bb7c627804440aec9b40b8c6c57a, type: 3}
+      propertyPath: <Color>k__BackingField.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 704451656272688747, guid: a7c7bb7c627804440aec9b40b8c6c57a, type: 3}
       propertyPath: m_Name
       value: Hole
@@ -3794,6 +3802,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 902351020}
+    - target: {fileID: 704451656272688756, guid: a7c7bb7c627804440aec9b40b8c6c57a, type: 3}
+      propertyPath: _maxPoint
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

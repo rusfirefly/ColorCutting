@@ -856,7 +856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 170, y: -126}
+  m_AnchoredPosition: {x: 170, y: -200.99988}
   m_SizeDelta: {x: 381.7397, y: 90.77338}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4897261357624790387
@@ -894,7 +894,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 7
     m_MaxSize: 72
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1014,7 +1014,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 173.26657, y: -197.99982}
+  m_AnchoredPosition: {x: 173.26657, y: -273}
   m_SizeDelta: {x: 381.10486, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4897261358093192119
@@ -1382,6 +1382,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4897261357624790389}
+  - {fileID: 6919228059076185178}
   - {fileID: 4897261358069608617}
   - {fileID: 4897261359164198549}
   - {fileID: 4897261358363825924}
@@ -1470,6 +1471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _completeLevel: {fileID: 4897261358363825927}
   _failLevel: {fileID: 8610416749773847343}
+  _scoreText: {fileID: 2751789674108755617}
   _levelName: {fileID: 4897261357624790386}
   _cutText: {fileID: 4897261358107770358}
   _reloadButton: {fileID: 4897261359164198546}
@@ -1733,7 +1735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -146.88974, y: 2}
+  m_AnchoredPosition: {x: -146.88974, y: -2}
   m_SizeDelta: {x: -302.9877, y: 121.971}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4897261359227787989
@@ -2380,6 +2382,87 @@ RectTransform:
   m_AnchoredPosition: {x: -2, y: 98.5}
   m_SizeDelta: {x: 97.586426, y: -2060.654}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &8802356965777539675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6919228059076185178}
+  - component: {fileID: 3296229799985158591}
+  - component: {fileID: 2751789674108755617}
+  m_Layer: 5
+  m_Name: ScoreText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6919228059076185178
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802356965777539675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.79948366, y: 0.79948366, z: 0.79948366}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4897261358577705043}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 362, y: -132.99988}
+  m_SizeDelta: {x: 789.3293, y: 90.7734}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3296229799985158591
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802356965777539675}
+  m_CullTransparentMesh: 1
+--- !u!114 &2751789674108755617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802356965777539675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 72
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 7
+    m_MaxSize: 72
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Score: 0
+
+'
 --- !u!1 &9022615256775663635
 GameObject:
   m_ObjectHideFlags: 0

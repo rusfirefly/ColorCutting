@@ -17,6 +17,7 @@ public class LevelInformation
     public int LevelNumber;
     public int CountStarCollected;
     public int Score;
+    public bool IsCompleted;
     public bool IsActive;
     
     [NonSerialized] public LevelView LevelView;

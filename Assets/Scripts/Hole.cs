@@ -4,7 +4,7 @@ public class Hole : MonoBehaviour
 {
     [SerializeField] private Collected _collected;
     [SerializeField] private GameObject _holeComplete;
-
+    [SerializeField] private int _maxPoint;
     private ColorPoint _holePoint;
     private Animation _animation;
 
@@ -12,7 +12,7 @@ public class Hole : MonoBehaviour
     {
         _holePoint = GetComponent<ColorPoint>();
         _animation = GetComponentInParent<Animation>();
-        _collected.Initialized(_holePoint, _animation);
+        _collected.Initialized(_maxPoint, _holePoint, _animation);
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -10,6 +10,14 @@ public class Collected : MonoBehaviour
     private int _score;
     private ColorPoint _holeColor;
     private Animation _animation;
+    private int _maxPoint;
+    private int _pointNumber;
+    private Hole _hole;
+
+    private void Start()
+    {
+        _hole = GetComponentInParent<Hole>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,6 +27,7 @@ public class Collected : MonoBehaviour
             if (_holeColor.Color == colorPoint.Color)
             {
                 _score += colorPoint.Weight;
+                _pointNumber++;
                 ScoreAdd?.Invoke(_score);
                 SetCountToText(_score);
                 if(_animation.isPlaying == false)
@@ -34,12 +43,19 @@ public class Collected : MonoBehaviour
             }
         }
 
+        if(_pointNumber == _maxPoint)
+        {
+            if (_hole)
+              _hole.Complete();
+        }
+
         CollectedPoint?.Invoke();
         Destroy(collision.gameObject);
     }
 
-    public void Initialized(ColorPoint holeColor, Animation animation)
+    public void Initialized(int maxPoint, ColorPoint holeColor, Animation animation)
     {
+        _maxPoint = maxPoint;
         _holeColor = holeColor;
         _animation = animation;
         _animation.Stop();
