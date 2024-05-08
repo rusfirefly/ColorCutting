@@ -1,32 +1,56 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using YG;
 
 public class SelectLevelHandler : MonoBehaviour
 {
     [SerializeField] private List<LevelView> _levelViews;
     [SerializeField] private LeveSelectHUD _leveSelectHUD;
+    [SerializeField] private Text _data;
 
     private int _seasonNumber;
     private LevelData _seasonsData;
 
+    private void Awake()
+    {
+        YandexGame.LoadProgress();
+        _leveSelectHUD = GetComponent<LeveSelectHUD>();
+    }
+
     private void Start()
     {
+        _seasonNumber = 1;
         Initialized();
-        YandexSDK.LoadData();
+    }
+
+    private void OnEnable()
+    {
+        YandexGame.GetDataEvent += GetLoad;
+    }
+
+    private void OnDisable()
+    {
+        YandexGame.GetDataEvent -= GetLoad;
+    }
+
+    private void GetLoad()
+    {
+        _seasonsData = YandexGame.savesData.SeasonData;
     }
 
     public void Initialized()
     {
-        #if UNIT_EDITOR
-        _seasonsData = LevelHandler.LoadData();
-        #endif
-        _seasonsData = YandexSDK.LevelDataLoad;
-        
+        _seasonsData = YandexGame.savesData.SeasonData;
+
         bool isData = false;
         if(_seasonsData == null)
         {
             _seasonsData = new LevelData();
             _seasonsData.CurrentSeason = 1;
+            _seasonsData.ScoreAll = 0;
+            
             for (int i = 0; i < _levelViews.Count; i++)
             {
                 _seasonsData.LevelInformation.Add(new LevelInformation());
@@ -57,9 +81,8 @@ public class SelectLevelHandler : MonoBehaviour
         LoadSeason();
     }
     
-    private void LoadSeason()
+    public void LoadSeason()
     {
-        Debug.Log(_seasonNumber);
         _leveSelectHUD.SelectSeason(_seasonNumber);
     }
 
@@ -68,8 +91,10 @@ public class SelectLevelHandler : MonoBehaviour
         _leveSelectHUD.SetSeasonName(_seasonsData.CurrentSeason);
         int countStarCollectedAll = 0;
         int index = 0;
+        int score = _seasonsData.ScoreAll;
+        _leveSelectHUD.SetScoreText(score);
 
-        foreach(LevelInformation levelInformation in _seasonsData.LevelInformation)
+        foreach (LevelInformation levelInformation in _seasonsData.LevelInformation)
         {
             int numberLevel = isData ? levelInformation.LevelNumber : _levelViews[index].NumberLevel;
             bool activeLevel = isData ? levelInformation.IsActive : _levelViews[index].IsActive;
@@ -78,7 +103,7 @@ public class SelectLevelHandler : MonoBehaviour
 
             countStarCollectedAll += levelInformation.CountStarCollected;
 
-            _levelViews[index].LoadLevelInformation(countStarCollected);
+            _levelViews[index].SetStars(countStarCollected);
             _levelViews[index].SetActiveLevelVisible(activeLevel);
 
             if (isCompleted)
@@ -96,11 +121,13 @@ public class SelectLevelHandler : MonoBehaviour
             index++;
         }
 
-#if UNIT_EDITOR
-        LevelHandler.SaveData(_seasonsData);
-#endif
-        YandexSDK.SaveData(_seasonsData);
         _leveSelectHUD.SetStarCollected(countStarCollectedAll, _seasonsData.LevelInformation.Count);
-        _leveSelectHUD.SetScoreText(_seasonsData.ScoreAll);
     }
+
+    public void ResetSaveData()
+    {
+        YandexGame.ResetSaveProgress();
+        YandexGame.SaveProgress();
+    }
+
 }

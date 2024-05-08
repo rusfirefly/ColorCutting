@@ -13,10 +13,17 @@ public class LeveSelectHUD : MonoBehaviour
     [SerializeField] private Transform _seasonPosition;
     [SerializeField] private int _seasonNumber;
 
-    [SerializeField] private float _offsetPositionX;
-
+    [SerializeField] private Vector3 _pageStep;
+    [SerializeField] private float _duration;
+    [SerializeField] private Ease _ease;
     private const int _countStarOnLevel = 3;
     private int _numberSeasonPreview;
+    private Vector3 position;
+
+    private void Awake()
+    {
+        position = _seasonPosition.position;
+    }
 
     public void SetScoreText(int score) => _scoreText.text = $"Score: {score}";
 
@@ -28,17 +35,16 @@ public class LeveSelectHUD : MonoBehaviour
     {
         SetSeasonName(numberSeason);
         SetVisibleButton(numberSeason);
-        Vector3 position = _seasonPosition.transform.position;
         
         if (numberSeason > _numberSeasonPreview)
         {
-            position.x -= _offsetPositionX;
+            position -= _pageStep;
         }
         else
         {
-            position.x += _offsetPositionX;
+            position += _pageStep;
         }
-        _seasonPosition.transform.DOMoveX(position.x, 0.05f);
+        _seasonPosition.transform.DOMoveX(position.x, _duration).SetEase(_ease);
         _numberSeasonPreview = numberSeason;
     }
 

@@ -17,25 +17,21 @@ public class LevelView : MonoBehaviour
 
     [SerializeField] private Button _levelButton;
 
-    private void Start()
+    private void Awake()
     {
         _levelButton = GetComponent<Button>();
-    }
+        _starView = GetComponent<StarView>();
 
-    #if UNITY_EDITOR
-    private void OnValidate()
-    {
         SetActiveLevelVisible(IsActive);
     }
-    #endif
-
-    public void LoadLevelInformation(int countStar)
+     
+    public void SetStars(int countStar)
     {
-        _starView = GetComponent<StarView>();
         _numberLevelText.text = $"{NumberLevel}";
         for (int i = 0; i < countStar; i++)
         {
-            _starView.SetStar(i);
+            if(i<3)            
+                _starView.SetStar(i);
         }
     }
 

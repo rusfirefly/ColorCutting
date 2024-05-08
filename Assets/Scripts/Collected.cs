@@ -14,7 +14,7 @@ public class Collected : MonoBehaviour
     private int _pointNumber;
     private Hole _hole;
 
-    private void Start()
+    private void Awake()
     {
         _hole = GetComponentInParent<Hole>();
     }

@@ -7,7 +7,7 @@ public class StarView : MonoBehaviour
     [SerializeField] private Sprite _startCollected;
     [SerializeField] private Sprite _noneStar;
 
-    private void Start()
+    private void Awake()
     {
         SetDefaultStartCollected();
     }

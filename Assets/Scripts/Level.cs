@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using YG;
 public class Level : MonoBehaviour
 {
     [SerializeField] private HudHandler _hud;
@@ -16,11 +16,17 @@ public class Level : MonoBehaviour
 
     private int _currentSeason;
     private LevelData _levelData;
+    private SavesYG _saveYG;
     private LevelInformation _levelInformation;
     private int _score;
     private int _pointCount;
     private int _maxPoint;
     private int _currentScore;
+
+    private void Awake()
+    {
+        YandexGame.LoadProgress();
+    }
 
     public void Start()
     {
@@ -32,8 +38,9 @@ public class Level : MonoBehaviour
         _currentScore = 0;
         _maxPoint = maxPoint;
         _levelInformation = new LevelInformation();
-        _levelData = LevelHandler.LoadData();
 
+        _levelData = YandexGame.savesData.SeasonData;
+        
         _levelInformation.LevelNumber = _levelNumber;
         _levelInformation.CountStarCollected = 0;
         _levelInformation.Score = 0;
@@ -50,6 +57,7 @@ public class Level : MonoBehaviour
                 _levelInformation = lavelInformation;
                 _currentScore = _levelData.ScoreAll - _levelInformation.Score;
             }
+            
         }
         else
         {
@@ -76,6 +84,9 @@ public class Level : MonoBehaviour
         _cutting.Lose += OnLose;
         _cutting.Cut += OnCut;
         _pointHandler.NullPoint += OnNullPoint;
+
+        YandexGame.RewardVideoEvent += OnReward;
+        YandexGame.GetDataEvent += GetLoad;
     }
 
     private void OnDisable()
@@ -85,6 +96,20 @@ public class Level : MonoBehaviour
         _cutting.Lose -= OnLose;
         _cutting.Cut -= OnCut;
         _pointHandler.NullPoint -= OnNullPoint;
+
+        YandexGame.RewardVideoEvent -= OnReward;
+        YandexGame.GetDataEvent -= GetLoad;
+    }
+
+    private void GetLoad()
+    {
+        _levelData = YandexGame.savesData.SeasonData;   
+    }
+
+    private void OnReward(int id)
+    {
+        if(id == 3)
+            _cutting.AddCut(id);
     }
 
     private void OnScoreAdd(int scrore)
@@ -141,7 +166,7 @@ public class Level : MonoBehaviour
                 isNewScore = true;
             }
 
-            if (_starCollected > _levelInformation.CountStarCollected)
+            if (_starCollected >= _levelInformation.CountStarCollected)
             {
                 _levelInformation.CountStarCollected = _starCollected;
                 _levelData.LevelInformation[_levelNumber - 1] = _levelInformation;
@@ -152,7 +177,8 @@ public class Level : MonoBehaviour
             if (isNewScore || isNewStarCollected)
             {
                 _levelData.LevelInformation[_levelNumber].IsActive = true;
-                LevelHandler.SaveData(_levelData);
+                YandexGame.savesData.SeasonData = _levelData;
+                YandexGame.SaveProgress();
             }
 
             _hud.ShowCompleteLevel();
@@ -175,10 +201,8 @@ public class Level : MonoBehaviour
 
     public void ShowAdvertisement()
     {
-        Debug.Log("реклама");
+         YandexGame.RewVideoShow(3);
         _hud.SetVisibleFailLevel(false);
-        _cutting.AddCut(3);///временно
-        Time.timeScale = 1;
     }
 
 

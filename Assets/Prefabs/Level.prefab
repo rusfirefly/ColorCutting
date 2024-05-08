@@ -774,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberLevelText: {fileID: 8717900905111979966}
-  _starView: {fileID: 0}
+  _starView: {fileID: 3688443989400153148}
   _activeLevel: {fileID: 4187338529907002287}
   _deactiveLevel: {fileID: 335721385979525574}
   _complete: {fileID: 6128159247892024195}
