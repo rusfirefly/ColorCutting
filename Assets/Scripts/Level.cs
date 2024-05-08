@@ -37,44 +37,32 @@ public class Level : MonoBehaviour
     {
         _currentScore = 0;
         _maxPoint = maxPoint;
-        _levelInformation = new LevelInformation();
-
         _levelData = YandexGame.savesData.SeasonData;
         
-        _levelInformation.LevelNumber = _levelNumber;
-        _levelInformation.CountStarCollected = 0;
-        _levelInformation.Score = 0;
-
         if (_levelData != null)
         {
             _currentSeason = _levelData.CurrentSeason;
             LevelInformation lavelInformation = _levelData.LevelInformation.Find(level=>level.LevelNumber == _levelNumber);
             if(lavelInformation == null)
             {
+                _levelInformation.CountStarCollected = 0;
+                _levelInformation.IsActive = true;
+                _levelInformation.IsCompleted = false;
+                _levelInformation.Score = 0;
+
                 _levelData.LevelInformation.Add(_levelInformation);
-            }else
+            }
+            else
             {
                 _levelInformation = lavelInformation;
                 _currentScore = _levelData.ScoreAll - _levelInformation.Score;
             }
             
         }
-        else
-        {
-            _currentSeason = 1;
-            CreateNewLevelData();
-        }
-
+ 
         _hud.SetLavelNumber(_levelNumber);
         _pointHandler.Initialized(maxPoint);
         _hud.SetScoreText(_currentScore);
-    }
-
-    private void CreateNewLevelData()
-    {
-        _levelData = new LevelData();
-        _levelData.ScoreAll = 0;
-        _levelData.LevelInformation.Add(_levelInformation);
     }
 
     private void OnEnable()
@@ -122,7 +110,7 @@ public class Level : MonoBehaviour
 
     private void OnCollected()
     {
-        _starCollected++;
+         _starCollected++;
     }
 
     private void OnNullPoint()
@@ -177,8 +165,6 @@ public class Level : MonoBehaviour
             if (isNewScore || isNewStarCollected)
             {
                 _levelData.LevelInformation[_levelNumber].IsActive = true;
-                YandexGame.savesData.SeasonData = _levelData;
-                YandexGame.SaveProgress();
             }
 
             _hud.ShowCompleteLevel();
@@ -188,6 +174,9 @@ public class Level : MonoBehaviour
 
     public void NextLevel()
     {
+        YandexGame.savesData.SeasonData = _levelData;
+        YandexGame.SaveProgress();
+
         _levelNumber++;
         SceneManager.LoadScene(_levelNumber);
     }

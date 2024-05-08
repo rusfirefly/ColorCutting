@@ -9,6 +9,7 @@ public class Star : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (_isCollected) return;
+
         Destroy(gameObject);
         Collected?.Invoke();
         _isCollected = true;

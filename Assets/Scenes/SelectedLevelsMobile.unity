@@ -9049,45 +9049,6 @@ MonoBehaviour:
   - {fileID: 1415160739}
   - {fileID: 286739560}
   - {fileID: 1462658495}
-  - {fileID: 417518346}
-  - {fileID: 452722181}
-  - {fileID: 1128137116}
-  - {fileID: 1012979152}
-  - {fileID: 603205107}
-  - {fileID: 2063876887}
-  - {fileID: 1513403068}
-  - {fileID: 758532024}
-  - {fileID: 1839641055}
-  - {fileID: 1246591876}
-  - {fileID: 278723889}
-  - {fileID: 478911334}
-  - {fileID: 91510539}
-  - {fileID: 1781929891}
-  - {fileID: 2054082230}
-  - {fileID: 376566523}
-  - {fileID: 589922464}
-  - {fileID: 1102720584}
-  - {fileID: 630795616}
-  - {fileID: 1707838846}
-  - {fileID: 1666027556}
-  - {fileID: 2141591676}
-  - {fileID: 609462100}
-  - {fileID: 646553655}
-  - {fileID: 351338702}
-  - {fileID: 1648831801}
-  - {fileID: 524530543}
-  - {fileID: 1724547105}
-  - {fileID: 566944068}
-  - {fileID: 56612056}
-  - {fileID: 110100470}
-  - {fileID: 1263637192}
-  - {fileID: 31746687}
-  - {fileID: 157386399}
-  - {fileID: 493489969}
-  - {fileID: 1388513154}
-  - {fileID: 1754009662}
-  - {fileID: 246633884}
-  - {fileID: 1484979349}
   _leveSelectHUD: {fileID: 1138607115}
   _data: {fileID: 0}
 --- !u!114 &1138607115
@@ -13277,17 +13238,6 @@ RectTransform:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2459630637290831049, guid: 5e5d7f0996ca0154981385065dc44724, type: 3}
   m_PrefabInstance: {fileID: 1666027554}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8890866731f15043ac096bdfa7afce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1707838846 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2459630637290831049, guid: 5e5d7f0996ca0154981385065dc44724, type: 3}
-  m_PrefabInstance: {fileID: 145624182}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

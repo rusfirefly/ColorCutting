@@ -18,6 +18,7 @@ public class Tutorial : MonoBehaviour
     {
         _position = _hand1.transform.localPosition;
         _isPlayAnimation = true;
+        _hand1.transform.position = Camera.main.WorldToScreenPoint(_startPosition.position);
     }
 
     private void Update()
@@ -39,11 +40,6 @@ public class Tutorial : MonoBehaviour
             _position.x = Mathf.PingPong(Time.time * _speedAnimation, _xMaxPosition - _xMinPosition) + _xMinPosition;
             _hand1.transform.localPosition = _position;
         }
-    }
-
-    private void OnValidate()
-    {
-        _hand1.transform.position = Camera.main.WorldToScreenPoint(_startPosition.position);
     }
 
     public void StartAnimation() => _isPlayAnimation = true;

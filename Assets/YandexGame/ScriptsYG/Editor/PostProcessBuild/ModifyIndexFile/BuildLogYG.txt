@@ -1,2 +1,2 @@
 Build path: E:/#Unity/#WebGL/ColorCutting
-Build number: 29
+Build number: 32

@@ -12,6 +12,9 @@ public class SelectLevelHandler : MonoBehaviour
 
     private int _seasonNumber;
     private LevelData _seasonsData;
+   
+    private bool IsNewSeason => _levelViews.Count > _seasonsData.LevelInformation.Count;
+
 
     private void Awake()
     {
@@ -47,18 +50,18 @@ public class SelectLevelHandler : MonoBehaviour
         bool isData = false;
         if(_seasonsData == null)
         {
-            _seasonsData = new LevelData();
-            _seasonsData.CurrentSeason = 1;
-            _seasonsData.ScoreAll = 0;
-            
-            for (int i = 0; i < _levelViews.Count; i++)
-            {
-                _seasonsData.LevelInformation.Add(new LevelInformation());
-            }
+            SaveNewSeason();
         }
         else
         {
             isData = true;
+            //если новые сезоны. сделать проверку и сохранить.
+            if (IsNewSeason)
+            {
+                Debug.Log("ok");
+                AddNewSeason();
+                SaveData();
+            }
             _seasonNumber = _seasonsData.CurrentSeason;
         }
 
@@ -84,6 +87,43 @@ public class SelectLevelHandler : MonoBehaviour
     public void LoadSeason()
     {
         _leveSelectHUD.SelectSeason(_seasonNumber);
+    }
+
+    private void SaveNewSeason()
+    {
+        _seasonsData = new LevelData();
+        _seasonsData.CurrentSeason = 1;
+        _seasonsData.ScoreAll = 0;
+
+        for (int i = 0; i < _levelViews.Count; i++)
+        {
+            LevelInformation info = new LevelInformation();
+            info.LevelNumber = _levelViews[i].NumberLevel;
+            info.IsActive = _levelViews[i].IsActive;
+            info.IsCompleted = false;
+            info.Score = 0;
+            _seasonsData.LevelInformation.Add(info);
+        }
+        SaveData();
+    }
+
+    private void SaveData()
+    {
+        YandexGame.savesData.SeasonData = _seasonsData;
+        YandexGame.SaveProgress();
+    }
+
+    private void AddNewSeason()
+    {
+        for (int i = _seasonsData.LevelInformation.Count; i < _levelViews.Count; i++)
+        {
+           LevelInformation info = new LevelInformation();
+           info.LevelNumber = _levelViews[i].NumberLevel;
+           info.IsActive = _levelViews[i].IsActive;
+           info.IsCompleted = false;
+           info.Score = 0;
+           _seasonsData.LevelInformation.Add(info);
+        }
     }
 
     private void ViewAllLevels(bool isData)
@@ -124,6 +164,7 @@ public class SelectLevelHandler : MonoBehaviour
         _leveSelectHUD.SetStarCollected(countStarCollectedAll, _seasonsData.LevelInformation.Count);
     }
 
+    //для сброса . удалить в релизе!!!
     public void ResetSaveData()
     {
         YandexGame.ResetSaveProgress();
