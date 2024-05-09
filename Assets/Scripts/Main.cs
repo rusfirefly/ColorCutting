@@ -7,19 +7,42 @@ public class Main : MonoBehaviour
     [SerializeField] private int _idSceneDesktop;
     [SerializeField] private int _idSceneMobile;
 
-    private void Start()
+    public static Main Instance;
+    
+    public int IdLoadScene { get; private set; }
+
+    public string Platform { get; private set; }
+
+    private void Awake()
     {
-        LoadSceneSelectLevel();
+        if (Instance == null)
+        {
+            gameObject.name = "Main";
+            Platform = YandexGame.EnvironmentData.deviceType;
+
+            GetIdScene();
+            LoadSceneSelectLevel();
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public  void LoadSceneSelectLevel()
+    private int GetIdScene()
     {
-        string platform = YandexGame.EnvironmentData.deviceType;
-        int idScene = _idSceneDesktop;
-
+        IdLoadScene = _idSceneDesktop;
         if (YandexGame.EnvironmentData.isMobile)
-            idScene = _idSceneMobile;
+            IdLoadScene = _idSceneMobile;
 
-        SceneManager.LoadScene(idScene);
+        return IdLoadScene;
     }
+
+    public void LoadSceneSelectLevel()
+    {
+        SceneManager.LoadScene(IdLoadScene);
+    }
+
+
 }

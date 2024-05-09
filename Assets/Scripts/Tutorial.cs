@@ -21,6 +21,11 @@ public class Tutorial : MonoBehaviour
         _hand1.transform.position = Camera.main.WorldToScreenPoint(_startPosition.position);
     }
 
+    private void OnValidate()
+    {
+        _hand1.transform.position = Camera.main.WorldToScreenPoint(_startPosition.position);
+    }
+
     private void Update()
     {
         if(Input.touchCount > 0)

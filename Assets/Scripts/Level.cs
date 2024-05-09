@@ -194,5 +194,9 @@ public class Level : MonoBehaviour
         _hud.SetVisibleFailLevel(false);
     }
 
+    public void LoadSceneSelected()
+    {
+        Main.Instance.LoadSceneSelectLevel();
+    }
 
 }
