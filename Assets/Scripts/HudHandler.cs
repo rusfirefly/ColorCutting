@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class HudHandler : MonoBehaviour
 {
     [SerializeField] private GameObject _completeLevel;
     [SerializeField] private GameObject _failLevel;
-    [SerializeField] private Text _scoreText;
     [SerializeField] private Text _levelName;
     [SerializeField] private Text _cutText;
+    [SerializeField] private Button _showOptionsButton;
     [SerializeField] private Button _reloadButton;
     [SerializeField] private StarView _starView;
 
@@ -21,6 +22,7 @@ public class HudHandler : MonoBehaviour
     public void ShowCompleteLevel()
     {
         SetVisibleRelodButton(false);
+        SetVisibleShowOptionsButton(false);
         _completeLevel.gameObject.SetActive(true);
     }
 
@@ -35,12 +37,14 @@ public class HudHandler : MonoBehaviour
     public void SetVisibleFailLevel(bool visible)
     {
         SetVisibleRelodButton(!visible);
+        SetVisibleShowOptionsButton(!visible);
         _failLevel.gameObject.SetActive(visible);
     }
 
     public void SetVisibleRelodButton(bool visible) => _reloadButton.gameObject.SetActive(visible);
 
+    public void SetVisibleShowOptionsButton(bool visible) => _showOptionsButton.gameObject.SetActive(visible);
+
     public void SetCutText(int countCut) => _cutText.text = $"{countCut}";
 
-    public void SetScoreText(int score) => _scoreText.text = $"Score: {score}";
 }

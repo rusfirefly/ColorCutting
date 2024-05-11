@@ -62,11 +62,11 @@ public class Level : MonoBehaviour
  
         _hud.SetLavelNumber(_levelNumber);
         _pointHandler.Initialized(maxPoint);
-        _hud.SetScoreText(_currentScore);
     }
 
     private void OnEnable()
     {
+        Hole.Completed += OnCompleted;
         Star.Collected += OnCollected;
         Collected.ScoreAdd += OnScoreAdd;
         _cutting.Lose += OnLose;
@@ -79,6 +79,7 @@ public class Level : MonoBehaviour
 
     private void OnDisable()
     {
+        Hole.Completed -= OnCompleted;
         Star.Collected -= OnCollected;
         Collected.ScoreAdd -= OnScoreAdd;
         _cutting.Lose -= OnLose;
@@ -87,6 +88,12 @@ public class Level : MonoBehaviour
 
         YandexGame.RewardVideoEvent -= OnReward;
         YandexGame.GetDataEvent -= GetLoad;
+    }
+
+    private void OnCompleted()
+    {
+        _holeComplete++;
+        Debug.Log(_holeComplete);
     }
 
     private void GetLoad()
@@ -104,7 +111,6 @@ public class Level : MonoBehaviour
     {
         _score = scrore;
         _currentScore += _score;
-        _hud.SetScoreText(_currentScore);
         _pointCount++;
     }
 
@@ -133,9 +139,9 @@ public class Level : MonoBehaviour
 
     private void OnComplete()
     {
-        _holeComplete++;
-        if (_holeComplete == _countHole)
-        {
+        //_holeComplete++;
+        //if (_holeComplete == _countHole)
+        //{
             _cutting.Complete();
             bool isNewScore = false;
             bool isNewStarCollected = false;
@@ -169,7 +175,7 @@ public class Level : MonoBehaviour
 
             _hud.ShowCompleteLevel();
             _hud.SetStarCompleted(_starCollected);
-        }
+       //}
     }
 
     public void NextLevel()
@@ -185,7 +191,7 @@ public class Level : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    
+
     public void AddCut(int count) =>_cutting.AddCut(count);
 
     public void ShowAdvertisement()

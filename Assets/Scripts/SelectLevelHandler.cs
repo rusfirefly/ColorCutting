@@ -15,7 +15,6 @@ public class SelectLevelHandler : MonoBehaviour
    
     private bool IsNewSeason => _levelViews.Count > _seasonsData.LevelInformation.Count;
 
-
     private void Awake()
     {
         YandexGame.LoadProgress();

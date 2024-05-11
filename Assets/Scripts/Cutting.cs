@@ -14,6 +14,7 @@ public class Cutting : MonoBehaviour
     private float _zPosition;
     private HingeJoint point;
     private bool _isComplete;
+    private bool _isStopCutting;
     private bool _isCutVisible;
     private bool _isLastCut;
     private Vector3 _positionCursor;
@@ -32,13 +33,14 @@ public class Cutting : MonoBehaviour
     private void Update()
     {
         if (_isComplete) return;
+        if (_isStopCutting) return;
 
         if (_isLastCut)
         {
             Lose?.Invoke();
             _isComplete = true;
         }
-
+        
         if (Input.touchCount > 0)
         {
             _isTouch = true;
@@ -98,7 +100,6 @@ public class Cutting : MonoBehaviour
                             _isLastCut = true;
                             return;
                         }
-
                         cord.Cut(point);
                         Destroy(point);
                         CutCord();
@@ -121,6 +122,9 @@ public class Cutting : MonoBehaviour
     {
         _isComplete = true;
     }
+    public void StopCutting() => _isStopCutting = true;
+
+    public void StartCutting() => _isStopCutting = false;
 
     private void ShowCut(bool visible)
     {
@@ -143,4 +147,6 @@ public class Cutting : MonoBehaviour
             _isComplete = true;
         }
     }
+
+    
 }

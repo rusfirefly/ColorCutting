@@ -13,7 +13,7 @@ public class Collected : MonoBehaviour
     private int _maxPoint;
     private int _pointNumber;
     private Hole _hole;
-
+    private const int _multiply = 100;
     private void Awake()
     {
         _hole = GetComponentInParent<Hole>();
@@ -24,6 +24,7 @@ public class Collected : MonoBehaviour
         ColorPoint colorPoint = collision.gameObject.GetComponent<ColorPoint>();
         if(colorPoint)
         {
+           // Debug.Log($"{_holeColor.Color} == {colorPoint.Color}");
             if (_holeColor.Color == colorPoint.Color)
             {
                 _score += colorPoint.Weight;
@@ -62,5 +63,5 @@ public class Collected : MonoBehaviour
         SetCountToText(_score);
     }
 
-    private void SetCountToText(int count) => _textCount.text = $"{count}";
+    private void SetCountToText(int count) => _textCount.text = $"{count}/{_hole.GetMaxPoint * _multiply}";
 }

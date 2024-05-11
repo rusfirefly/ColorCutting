@@ -48,6 +48,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Season1/Level 13.unity
     guid: d1190517247829948ae3d8bb4267d3fc
   - enabled: 1
+    path: Assets/Scenes/Season1/Level 14.unity
+    guid: 953d370caf4980644b5615f42eef8ced
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 15.unity
+    guid: 32beeaaadf7048f4392d839c8e35483f
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 16.unity
+    guid: f5dbdaff3db3a01409b97c3a824d2e13
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 17.unity
+    guid: e42c71e27d25b4147b08643617bc78fb
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 18.unity
+    guid: 9ec2604aa8f37f94387640eb1da1f3c4
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 19.unity
+    guid: d3752a3b579e94a44b2ceca7036f8a85
+  - enabled: 1
+    path: Assets/Scenes/Season1/Level 20.unity
+    guid: a2e2c9e99180c3c45b4fce1d0ce1ddc9
+  - enabled: 1
     path: Assets/Scenes/SelectedLevelsDesctopMobile.unity
     guid: 83429756cf533f44d8c835ec9efe87cc
   - enabled: 1

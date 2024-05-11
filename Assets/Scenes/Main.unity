@@ -368,8 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c32f918bc984564a840943c11d46053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _idSceneDesktop: 14
-  _idSceneMobile: 15
+  _idSceneDesktop: 21
+  _idSceneMobile: 22
 --- !u!4 &459808637
 Transform:
   m_ObjectHideFlags: 0
