@@ -16,7 +16,13 @@ public class Option : MonoBehaviour
     private void Start()
     {
         Auth();
-        if(YandexGame.savesData.SeasonData != null)
+        
+        if (YandexGame.auth)
+            _loginButton.interactable = false;
+        else
+            _loginButton.interactable = true;
+
+        if (YandexGame.savesData.SeasonData != null)
             SetScore(YandexGame.savesData.SeasonData.ScoreAll);
     }
 
