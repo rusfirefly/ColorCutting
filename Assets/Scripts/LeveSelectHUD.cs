@@ -25,9 +25,9 @@ public class LeveSelectHUD : MonoBehaviour
         position = _seasonPosition.position;
     }
 
-    public void SetScoreText(int score) => _scoreText.text = $"Score: {score}";
+    public void SetScoreText(int score) => _scoreText.text = $"Счёт: {score}";
 
-    public void SetSeasonName(int seasonNumber) =>_seasonName.text = $"Season {seasonNumber}";
+    public void SetSeasonName(int seasonNumber) =>_seasonName.text = $"Сезон {seasonNumber}";
 
     public void SetStarCollected(int countStarCollectedAll, int countStarAll) =>_countStarCollectedText.text = $"{countStarCollectedAll}/{countStarAll * _countStarOnLevel}";
 

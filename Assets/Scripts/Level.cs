@@ -1,8 +1,7 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using YG;
+
 public class Level : MonoBehaviour
 {
     [SerializeField] private HudHandler _hud;

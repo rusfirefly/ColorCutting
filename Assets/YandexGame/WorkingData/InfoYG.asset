@@ -16,9 +16,9 @@ MonoBehaviour:
   playerPhotoSize: 0
   autoGameReadyAPI: 1
   playerInfoSimulation:
-    authorized: 1
+    authorized: 0
     isMobile: 0
-    language: en
+    language: ru
     name: Player this
     uniqueID: 000
     photo: https://justplaygames.ru/public/icon_player.png
@@ -181,9 +181,9 @@ MonoBehaviour:
       rank: 2
       score: 10
   LocalizationEnable: 1
-  callingLanguageCheck: 1
+  callingLanguageCheck: 0
   translateMethod: 0
-  domainAutoLocalization: com
+  domainAutoLocalization: ru
   CSVFileTranslate:
     format: 0
     name: TranslateCSV
@@ -216,7 +216,8 @@ MonoBehaviour:
     de: 0
     hi: 0
   fonts:
-    defaultFont: []
+    defaultFont:
+    - {fileID: 12800000, guid: 82cc91725ab2f0c41920038a250d768b, type: 3}
     ru: []
     en: []
     tr: []

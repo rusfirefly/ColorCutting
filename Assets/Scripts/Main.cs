@@ -28,6 +28,8 @@ public class Main : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
     }
 
     private int GetIdScene()

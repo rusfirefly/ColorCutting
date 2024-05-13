@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
+using DG.Tweening;
 
 public class Option : MonoBehaviour
 {
@@ -12,15 +13,16 @@ public class Option : MonoBehaviour
     [SerializeField] private Button _showOptionButton;
     [SerializeField] private SoundHandler _soundHandler;
     [SerializeField] private Text _scoreText;
+    [SerializeField] private GameObject _authDialog;
 
     private void Start()
     {
-        Auth();
-        
         if (YandexGame.auth)
             _loginButton.interactable = false;
         else
             _loginButton.interactable = true;
+
+        Auth();
 
         if (YandexGame.savesData.SeasonData != null)
             SetScore(YandexGame.savesData.SeasonData.ScoreAll);
@@ -32,12 +34,27 @@ public class Option : MonoBehaviour
         Auth();
     }
 
-    public void ShowAuthDialog()
+    public void ShowYandexAuthDialog()
     {
         if (YandexGame.auth == false)
         {
             YandexGame.AuthDialog();
         }
+    }
+
+    public void ShowAuthDialog()
+    {
+        AnimationDialog(1, 0.3f);
+    }
+
+    public void HideAuthDialog()
+    {
+        AnimationDialog(0, 0.3f);
+    }
+
+    private void AnimationDialog(float endValue, float duration)
+    {
+        _authDialog.transform.DOScale(endValue, duration);
     }
 
     public void Auth()

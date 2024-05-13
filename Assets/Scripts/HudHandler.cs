@@ -17,7 +17,7 @@ public class HudHandler : MonoBehaviour
         _starView = GetComponent<StarView>();
     }
 
-    public void SetLavelNumber(int levelNumvber) => _levelName.text = $"Level {levelNumvber}";
+    public void SetLavelNumber(int levelNumvber) => _levelName.text = $"Уровень {levelNumvber}";
 
     public void ShowCompleteLevel()
     {
