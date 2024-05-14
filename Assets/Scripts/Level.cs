@@ -145,6 +145,7 @@ public class Level : MonoBehaviour
             bool isNewScore = false;
             bool isNewStarCollected = false;
             int scoreOld = _levelData.LevelInformation[_levelNumber - 1].Score;
+
             if (_score > scoreOld)
             {
                 _levelData.ScoreAll -= scoreOld;
@@ -157,6 +158,7 @@ public class Level : MonoBehaviour
                 }
 
                 isNewScore = true;
+                YandexGame.NewLeaderboardScores("LeaderScore", _levelData.ScoreAll);//в отдельный класс!
             }
 
             if (_starCollected >= _levelInformation.CountStarCollected)
@@ -169,7 +171,8 @@ public class Level : MonoBehaviour
             
             if (isNewScore || isNewStarCollected)
             {
-                _levelData.LevelInformation[_levelNumber].IsActive = true;
+                if(_levelNumber < Main.Instance.MaxLevels)
+                    _levelData.LevelInformation[_levelNumber].IsActive = true;
             }
 
             _hud.ShowCompleteLevel();
@@ -183,7 +186,11 @@ public class Level : MonoBehaviour
         YandexGame.SaveProgress();
 
         _levelNumber++;
-        SceneManager.LoadScene(_levelNumber);
+
+        if (_levelNumber > Main.Instance.MaxLevels)
+            Main.Instance.LoadSceneSelectLevel();
+        else
+            SceneManager.LoadScene(_levelNumber);
     }
 
     public void Reload()

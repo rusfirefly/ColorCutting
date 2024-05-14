@@ -14,6 +14,7 @@ public class Collected : MonoBehaviour
     private int _pointNumber;
     private Hole _hole;
     private const int _multiply = 100;
+
     private void Awake()
     {
         _hole = GetComponentInParent<Hole>();
@@ -24,7 +25,7 @@ public class Collected : MonoBehaviour
         ColorPoint colorPoint = collision.gameObject.GetComponent<ColorPoint>();
         if(colorPoint)
         {
-           // Debug.Log($"{_holeColor.Color} == {colorPoint.Color}");
+            //Debug.Log($"{_holeColor.Color} == {colorPoint.Color}");
             if (_holeColor.Color == colorPoint.Color)
             {
                 _score += colorPoint.Weight;

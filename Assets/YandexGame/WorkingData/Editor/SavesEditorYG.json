@@ -1,8 +1,8 @@
 {
-  "idSave": 30,
+  "idSave": 31,
   "isFirstSession": false,
   "language": "ru",
-  "promptDone": true,
+  "promptDone": false,
   "money": 1,
   "newPlayerName": "Hello!",
   "openLevels": [
@@ -12,7 +12,7 @@
   ],
   "SeasonData": {
     "CurrentSeason": 1,
-    "ScoreAll": 1300,
+    "ScoreAll": 13100,
     "LevelInformation": [
       {
         "LevelNumber": 1,
@@ -31,268 +31,184 @@
       {
         "LevelNumber": 3,
         "CountStarCollected": 3,
-        "Score": 300,
+        "Score": 800,
         "IsCompleted": false,
         "IsActive": true
       },
       {
         "LevelNumber": 4,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 300,
         "IsCompleted": false,
         "IsActive": true
       },
       {
         "LevelNumber": 5,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 900,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 6,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
+        "CountStarCollected": 3,
+        "Score": 500,
+        "IsCompleted": true,
+        "IsActive": true
       },
       {
         "LevelNumber": 7,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 100,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 8,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
+        "CountStarCollected": 3,
+        "Score": 400,
+        "IsCompleted": true,
+        "IsActive": true
       },
       {
         "LevelNumber": 9,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
+        "CountStarCollected": 3,
+        "Score": 1000,
+        "IsCompleted": true,
+        "IsActive": true
       },
       {
         "LevelNumber": 10,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 2,
+        "Score": 600,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 11,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 400,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 12,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 1100,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 13,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
+        "CountStarCollected": 3,
+        "Score": 500,
+        "IsCompleted": true,
+        "IsActive": true
       },
       {
         "LevelNumber": 14,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 200,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 15,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 1000,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 16,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 800,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 17,
-        "CountStarCollected": 0,
+        "CountStarCollected": 1,
         "Score": 0,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 18,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
+        "CountStarCollected": 3,
+        "Score": 100,
+        "IsCompleted": true,
+        "IsActive": true
       },
       {
         "LevelNumber": 19,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 700,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 20,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
+        "CountStarCollected": 3,
+        "Score": 500,
+        "IsCompleted": true,
+        "IsActive": true
       },
       {
         "LevelNumber": 21,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 400,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 22,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 200,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 23,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 500,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 24,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 500,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 25,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 400,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 26,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 2,
+        "Score": 100,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 27,
-        "CountStarCollected": 0,
-        "Score": 0,
+        "CountStarCollected": 3,
+        "Score": 100,
         "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       },
       {
         "LevelNumber": 28,
-        "CountStarCollected": 0,
+        "CountStarCollected": 3,
         "Score": 0,
         "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 29,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 30,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 31,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 32,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 33,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 34,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 35,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 36,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 37,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 38,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 39,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
-      },
-      {
-        "LevelNumber": 40,
-        "CountStarCollected": 0,
-        "Score": 0,
-        "IsCompleted": false,
-        "IsActive": false
+        "IsActive": true
       }
     ]
   }

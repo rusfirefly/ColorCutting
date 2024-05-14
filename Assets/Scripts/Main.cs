@@ -6,6 +6,7 @@ public class Main : MonoBehaviour
 {
     [SerializeField] private int _idSceneDesktop;
     [SerializeField] private int _idSceneMobile;
+    [field:SerializeField] public int MaxLevels { get; private set; }
 
     public static Main Instance;
     

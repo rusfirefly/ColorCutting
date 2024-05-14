@@ -22,8 +22,6 @@ public class Cutting : MonoBehaviour
 
     private void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
         if(_cord)
             _zPosition = _cord.transform.position.z;
 
@@ -137,16 +135,4 @@ public class Cutting : MonoBehaviour
         if (CountCut >= 0)
             Cut?.Invoke(CountCut);
     }
-
-    private IEnumerator WaitPointFly()
-    {
-        yield return new WaitForSeconds(1.5f);
-        if (_isComplete == false)
-        {
-            Lose?.Invoke();
-            _isComplete = true;
-        }
-    }
-
-    
 }
