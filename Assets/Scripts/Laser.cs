@@ -8,6 +8,7 @@ public class Laser : MonoBehaviour
     [SerializeField] private LayerMask _maskPoint;
     [SerializeField] private float _timeReload;
     [SerializeField] private bool _isShoot;
+    [SerializeField] private bool _timerOff;
 
     private LineRenderer _lineRender;
     private Vector3 _position;
@@ -26,12 +27,15 @@ public class Laser : MonoBehaviour
 
     private void Update()
     {
-        _currentTime += Time.deltaTime;
-        if(_currentTime > _timeReload)
+        if (_timerOff == false)
         {
-            _isShoot = !_isShoot;
-            _lineRender.enabled = _isShoot;
-            _currentTime -= _timeReload;
+            _currentTime += Time.deltaTime;
+            if (_currentTime > _timeReload)
+            {
+                _isShoot = !_isShoot;
+                _lineRender.enabled = _isShoot;
+                _currentTime -= _timeReload;
+            }
         }
 
         if (_isShoot)

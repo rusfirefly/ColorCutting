@@ -32,12 +32,12 @@ public class PointHandler : MonoBehaviour
     private void OnDestroed()
     {
         _maxPoint--;
+        Debug.Log(_maxPoint);
         CheckCountPoint();
     }
 
     private void CheckCountPoint()
     {
-
         if (_maxPoint == 0)
         {
             NullPoint?.Invoke();

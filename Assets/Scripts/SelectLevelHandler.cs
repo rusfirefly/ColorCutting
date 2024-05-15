@@ -170,4 +170,8 @@ public class SelectLevelHandler : MonoBehaviour
         YandexGame.SaveProgress();
     }
 
+    public void ShowLeaderBord()
+    {
+
+    }
 }

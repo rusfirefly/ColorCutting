@@ -37,17 +37,22 @@ public class Level : MonoBehaviour
         _currentScore = 0;
         _maxPoint = maxPoint;
         _levelData = YandexGame.savesData.SeasonData;
-        
+        _pointHandler.Initialized(maxPoint);
+        _hud.SetLavelNumber(_levelNumber);
+
         if (_levelData != null)
         {
             _currentSeason = _levelData.CurrentSeason;
             LevelInformation lavelInformation = _levelData.LevelInformation.Find(level=>level.LevelNumber == _levelNumber);
             if(lavelInformation == null)
             {
+                _levelInformation = new LevelInformation();
+
                 _levelInformation.CountStarCollected = 0;
                 _levelInformation.IsActive = true;
                 _levelInformation.IsCompleted = false;
                 _levelInformation.Score = 0;
+                _levelInformation.LevelNumber = _levelNumber;
 
                 _levelData.LevelInformation.Add(_levelInformation);
             }
@@ -58,9 +63,6 @@ public class Level : MonoBehaviour
             }
             
         }
- 
-        _hud.SetLavelNumber(_levelNumber);
-        _pointHandler.Initialized(maxPoint);
     }
 
     private void OnEnable()
@@ -92,7 +94,6 @@ public class Level : MonoBehaviour
     private void OnCompleted()
     {
         _holeComplete++;
-        Debug.Log(_holeComplete);
     }
 
     private void GetLoad()
