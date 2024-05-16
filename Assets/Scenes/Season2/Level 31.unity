@@ -463,7 +463,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.45358273, g: 0.990566, b: 0.2756764, a: 1}
+    - _BaseColor: {r: 0.3261383, g: 1, b: 0.24056602, a: 1}
     - _Color: {r: 0.4535827, g: 0.99056596, b: 0.27567637, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -581,7 +581,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.45358273, g: 0.990566, b: 0.2756764, a: 1}
+    - _BaseColor: {r: 0.3261383, g: 1, b: 0.24056602, a: 1}
     - _Color: {r: 0.4535827, g: 0.99056596, b: 0.27567637, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -994,15 +994,15 @@ PrefabInstance:
       objectReference: {fileID: 978071567}
     - target: {fileID: 774838232, guid: a7c7bb7c627804440aec9b40b8c6c57a, type: 3}
       propertyPath: <Color>k__BackingField.b
-      value: 0.2756764
+      value: 0.24056602
       objectReference: {fileID: 0}
     - target: {fileID: 774838232, guid: a7c7bb7c627804440aec9b40b8c6c57a, type: 3}
       propertyPath: <Color>k__BackingField.g
-      value: 0.990566
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 774838232, guid: a7c7bb7c627804440aec9b40b8c6c57a, type: 3}
       propertyPath: <Color>k__BackingField.r
-      value: 0.45358273
+      value: 0.3261383
       objectReference: {fileID: 0}
     - target: {fileID: 704451656272688747, guid: a7c7bb7c627804440aec9b40b8c6c57a, type: 3}
       propertyPath: m_Name
@@ -2081,7 +2081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 777589603}
   <Weight>k__BackingField: 100
-  <Color>k__BackingField: {r: 0.45358273, g: 0.990566, b: 0.2756764, a: 1}
+  <Color>k__BackingField: {r: 0.3261383, g: 1, b: 0.24056602, a: 1}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,7 +2747,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.45358273, g: 0.990566, b: 0.2756764, a: 1}
+    - _BaseColor: {r: 0.3261383, g: 1, b: 0.24056602, a: 1}
     - _Color: {r: 0.4535827, g: 0.99056596, b: 0.27567637, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -3205,7 +3205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 72866455}
   <Weight>k__BackingField: 100
-  <Color>k__BackingField: {r: 0.45358273, g: 0.990566, b: 0.2756764, a: 1}
+  <Color>k__BackingField: {r: 0.3261383, g: 1, b: 0.24056602, a: 1}
 --- !u!1 &882704790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3558,7 +3558,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.45490196, g: 0.99215686, b: 0.27450982, a: 1}
+    - _BaseColor: {r: 0.3261383, g: 1, b: 0.24056602, a: 1}
     - _Color: {r: 0.45490193, g: 0.9921568, b: 0.2745098, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -3813,7 +3813,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.45358273, g: 0.990566, b: 0.2756764, a: 1}
+    - _BaseColor: {r: 0.3261383, g: 1, b: 0.24056602, a: 1}
     - _Color: {r: 0.4535827, g: 0.99056596, b: 0.27567637, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
@@ -5077,7 +5077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 956968812}
   <Weight>k__BackingField: 100
-  <Color>k__BackingField: {r: 0.45490196, g: 0.99215686, b: 0.27450982, a: 1}
+  <Color>k__BackingField: {r: 0.3261383, g: 1, b: 0.24056602, a: 1}
 --- !u!1001 &1340648453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5751,7 +5751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 57064944}
   <Weight>k__BackingField: 100
-  <Color>k__BackingField: {r: 0.45358273, g: 0.990566, b: 0.2756764, a: 1}
+  <Color>k__BackingField: {r: 0.3261383, g: 1, b: 0.24056602, a: 1}
 --- !u!1001 &1610265597
 PrefabInstance:
   m_ObjectHideFlags: 0
