@@ -15,7 +15,7 @@ public class ColorChange : MonoBehaviour
     #if UNITY_EDITOR
     private void OnValidate()
     {
-        _material ??= _meshRenderer.sharedMaterials[0];
+        //_material ??= _meshRenderer.sharedMaterials[0];
         if (_material)
         {
             Color color = _color;

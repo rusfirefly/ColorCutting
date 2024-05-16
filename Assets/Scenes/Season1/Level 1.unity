@@ -702,7 +702,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u0426\u0435\u043B\u044C:\n\u2116 2. \u0421\u043E\u0431\u0440\u0430\u0442\u044C
-    \u0432\u0441\u0435 \u0437\u0432\u0435\u0437\u0434\u044B."
+    \u0432\u0441\u0435 \u0437\u0432\u0451\u0437\u0434\u044B."
 --- !u!222 &330907711
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1588,6 +1588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 1834974545}
 --- !u!114 &668498929
 MonoBehaviour:
@@ -2199,6 +2200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 1834974545}
 --- !u!114 &830195093
 MonoBehaviour:
@@ -3048,6 +3050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 1834974545}
 --- !u!114 &1144362243
 MonoBehaviour:
@@ -3413,6 +3416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 1834974545}
 --- !u!114 &1336062403
 MonoBehaviour:
@@ -4083,6 +4087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 1834974545}
 --- !u!114 &1566789027
 MonoBehaviour:

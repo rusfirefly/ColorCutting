@@ -1,5 +1,5 @@
 {
-  "idSave": 33,
+  "idSave": 36,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
@@ -12,7 +12,7 @@
   ],
   "SeasonData": {
     "CurrentSeason": 1,
-    "ScoreAll": 14700,
+    "ScoreAll": 14800,
     "LevelInformation": [
       {
         "LevelNumber": 1,
@@ -185,8 +185,8 @@
       {
         "LevelNumber": 25,
         "CountStarCollected": 3,
-        "Score": 400,
-        "IsCompleted": false,
+        "Score": 500,
+        "IsCompleted": true,
         "IsActive": true
       },
       {
