@@ -8,9 +8,10 @@ public class SelectLevelHandler : MonoBehaviour
 {
     [SerializeField] private List<LevelView> _levelViews;
     [SerializeField] private LeveSelectHUD _leveSelectHUD;
-    [SerializeField] private Text _data;
 
+    [SerializeField] private int _maxSeasons;
     private int _seasonNumber;
+    private const int _seasonOne = 1;
     private LevelData _seasonsData;
    
     private bool IsNewSeason => _levelViews.Count > _seasonsData.LevelInformation.Count;
@@ -57,7 +58,7 @@ public class SelectLevelHandler : MonoBehaviour
             //если новые сезоны. сделать проверку и сохранить.
             if (IsNewSeason)
             {
-                Debug.Log("ok");
+                Debug.Log("добавлен");
                 AddNewSeason();
                 SaveData();
             }
@@ -69,16 +70,18 @@ public class SelectLevelHandler : MonoBehaviour
 
     public void NextSason()
     {
+        if (_seasonNumber == _maxSeasons) return;
         _seasonNumber++;
-        _seasonNumber = Mathf.Clamp(_seasonNumber, 1, 4);
+        _seasonNumber = Mathf.Clamp(_seasonNumber, _seasonOne, _maxSeasons);
        
         LoadSeason();
     }
 
     public void PreviwSeason()
     {
+        if (_seasonNumber == _seasonOne) return;
         _seasonNumber--;
-        _seasonNumber = Mathf.Clamp(_seasonNumber, 1 , 4);
+        _seasonNumber = Mathf.Clamp(_seasonNumber, _seasonOne, _maxSeasons);
         
         LoadSeason();
     }

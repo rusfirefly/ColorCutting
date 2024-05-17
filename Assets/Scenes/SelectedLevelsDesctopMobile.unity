@@ -9014,7 +9014,7 @@ MonoBehaviour:
   - {fileID: 1803492441}
   - {fileID: 1324765511}
   _leveSelectHUD: {fileID: 1138607115}
-  _data: {fileID: 589285929}
+  _maxSeasons: 2
 --- !u!114 &1138607115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15917,13 +15917,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Options
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4719957703391495795, guid: 4dfdb39caedbeb046800725cae1d31e4, type: 3}
-    - {fileID: 1069354439342563411, guid: 4dfdb39caedbeb046800725cae1d31e4, type: 3}
-    - {fileID: 7158665821012745520, guid: 4dfdb39caedbeb046800725cae1d31e4, type: 3}
-    - {fileID: 500479758126119503, guid: 4dfdb39caedbeb046800725cae1d31e4, type: 3}
-    - {fileID: 2066134158629346249, guid: 4dfdb39caedbeb046800725cae1d31e4, type: 3}
-    - {fileID: 6961305525589545335, guid: 4dfdb39caedbeb046800725cae1d31e4, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

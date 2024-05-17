@@ -23,15 +23,14 @@ public class Option : MonoBehaviour
             _loginButton.interactable = true;
 
         Auth();
-
-        if (YandexGame.savesData.SeasonData != null)
-            SetScore(YandexGame.savesData.SeasonData.ScoreAll);
+        ShowScore();
     }
 
     public void ShowOptions()
     {
         SetVisibleTutorial(false);
         Auth();
+        ShowScore();
     }
 
     public void ShowYandexAuthDialog()
@@ -103,5 +102,10 @@ public class Option : MonoBehaviour
 
     private void SetScore(int score) => _scoreText.text = $"Ñ÷¸ò: {score}";
 
+    private void ShowScore()
+    {
+        if (YandexGame.savesData.SeasonData != null)
+            SetScore(YandexGame.savesData.SeasonData.ScoreAll);
+    }
 }
 
