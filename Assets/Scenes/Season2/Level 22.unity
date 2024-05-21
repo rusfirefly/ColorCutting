@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 289924266}
 --- !u!135 &17099128
 SphereCollider:
@@ -804,6 +805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 289924266}
 --- !u!135 &93038653
 SphereCollider:
@@ -2155,6 +2157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 1834974545}
 --- !u!114 &668498929
 MonoBehaviour:
@@ -2222,6 +2225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 0}
 --- !u!135 &688997978
 SphereCollider:
@@ -2256,7 +2260,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.3, y: 1.95, z: -0.096}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -3082,6 +3086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 289924266}
 --- !u!135 &801650517
 SphereCollider:
@@ -3454,6 +3459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 1834974545}
 --- !u!114 &830195093
 MonoBehaviour:
@@ -4024,6 +4030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 289924266}
 --- !u!135 &1030939494
 SphereCollider:
@@ -4611,6 +4618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 1834974545}
 --- !u!114 &1144362243
 MonoBehaviour:
@@ -4901,6 +4909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 1834974545}
 --- !u!114 &1336062403
 MonoBehaviour:
@@ -5372,6 +5381,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2434402634561098131, guid: 0329e73aeeac18c49a994054f0b82b82, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434402634561098135, guid: 0329e73aeeac18c49a994054f0b82b82, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2434402635224734880, guid: 0329e73aeeac18c49a994054f0b82b82, type: 3}
       propertyPath: m_Name
       value: EndFixedPoint
@@ -5644,6 +5661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 1834974545}
 --- !u!114 &1566789027
 MonoBehaviour:
@@ -5792,6 +5810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boomEffect: {fileID: 0}
+  IsPort: 0
   <Cord>k__BackingField: {fileID: 289924266}
 --- !u!135 &1640652222
 SphereCollider:
