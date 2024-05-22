@@ -147,7 +147,15 @@ public class Level : MonoBehaviour
             bool isNewStarCollected = false;
             int scoreOld = _levelData.LevelInformation[_levelNumber - 1].Score;
 
-            if (_score > scoreOld)
+            Debug.Log(_score);
+            if (_score == scoreOld)
+            {
+                bool isCompletedLevel = _levelData.LevelInformation[_levelNumber - 1].IsCompleted;
+                if (isCompletedLevel==false)
+                    _levelData.LevelInformation[_levelNumber - 1].IsCompleted = true;
+            }
+
+            if (_score >= scoreOld)
             {
                 _levelData.ScoreAll -= scoreOld;
                 _levelData.ScoreAll += _score;
@@ -174,18 +182,18 @@ public class Level : MonoBehaviour
             {
                 if(_levelNumber < Main.Instance.MaxLevels)
                     _levelData.LevelInformation[_levelNumber].IsActive = true;
-            }
 
-            _hud.ShowCompleteLevel();
-            _hud.SetStarCompleted(_starCollected);
-       //}
+            YandexGame.savesData.SeasonData = _levelData;
+            YandexGame.SaveProgress();
+        }
+
+        _hud.ShowCompleteLevel();
+        _hud.SetStarCompleted(_starCollected);
+        //}
     }
 
     public void NextLevel()
     {
-        YandexGame.savesData.SeasonData = _levelData;
-        YandexGame.SaveProgress();
-
         _levelNumber++;
 
         if (_levelNumber > Main.Instance.MaxLevels)

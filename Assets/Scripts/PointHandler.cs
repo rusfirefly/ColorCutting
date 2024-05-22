@@ -32,7 +32,6 @@ public class PointHandler : MonoBehaviour
     private void OnDestroed()
     {
         _maxPoint--;
-        Debug.Log(_maxPoint);
         CheckCountPoint();
     }
 
