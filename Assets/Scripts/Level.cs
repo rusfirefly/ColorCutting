@@ -147,8 +147,7 @@ public class Level : MonoBehaviour
             bool isNewStarCollected = false;
             int scoreOld = _levelData.LevelInformation[_levelNumber - 1].Score;
 
-            Debug.Log(_score);
-            if (_score == scoreOld)
+             if (_score == scoreOld)
             {
                 bool isCompletedLevel = _levelData.LevelInformation[_levelNumber - 1].IsCompleted;
                 if (isCompletedLevel==false)
