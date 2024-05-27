@@ -24,7 +24,9 @@ public class SelectLevelHandler : MonoBehaviour
 
     private void Start()
     {
-        _seasonNumber = 1;
+        if (YandexGame.EnvironmentData.isMobile)
+            Screen.orientation = ScreenOrientation.Portrait;
+
         Initialized();
     }
 

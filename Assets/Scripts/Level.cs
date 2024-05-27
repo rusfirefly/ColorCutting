@@ -30,6 +30,8 @@ public class Level : MonoBehaviour
     public void Start()
     {
         Time.timeScale = 1;
+        if (YandexGame.EnvironmentData.isMobile)
+            Screen.orientation = ScreenOrientation.Portrait;
     }
 
     public void Initialized(int maxPoint)
